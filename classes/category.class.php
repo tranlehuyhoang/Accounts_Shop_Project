@@ -35,7 +35,7 @@ class category
 
     public function show_category()
     {
-        $query = "SELECT * FROM tbl_category order by categoryid desc";
+        $query = "SELECT * FROM clone_category order by category_id desc";
         $result = $this->db->select($query);
 
         return $result;

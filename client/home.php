@@ -1,7 +1,7 @@
 <?php
 include_once '../inc/header.inc.php';
 
-
+$showcategory = $category->show_category();
 
 
 ?>
@@ -81,30 +81,28 @@ include_once '../inc/header.inc.php';
                                     <a class="nav-link active" id="pills-home-tab-fill" onclick="showProduct(0)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-shopping-cart mr-1"></i>TẤT CẢ SẢN
                                         PHẨM</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-home-tab-fill" onclick="showProduct(1)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><img src="../assets/storage/images/categoryQVJ1.png" width="25px" />
-                                        FACEBOOK VER 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-home-tab-fill" onclick="showProduct(8)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><img src="../assets/storage/images/category_WG13VC.png" width="25px" />
-                                        FACEBOOK VRI 2 [NO API CONNECTION]</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-home-tab-fill" onclick="showProduct(12)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><img src="../assets/storage/images/categoryA3C.png" width="25px" />
-                                        FACEBOOK IOS VER 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-home-tab-fill" onclick="showProduct(10)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><img src="../assets/storage/images/category_LUR6DH.png" width="25px" />
-                                        BM</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-home-tab-fill" onclick="showProduct(2)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><img src="../assets/storage/images/category9OH.png" width="25px" />
-                                        CLONE TIKTOK</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-home-tab-fill" onclick="showProduct(15)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><img src="../assets/storage/images/category0CPS.png" width="25px" />
-                                        INSTAGRAM</a>
-                                </li>
+                                <?php
+                                if (isset($showcategory)) {
+                                    if ($showcategory && $showcategory->num_rows > 0) {
+                                        $i = 0;
+                                        while ($result = $showcategory->fetch_assoc()) {
+                                            # code...
+                                ?>
+                                            <li class="nav-item">
+                                                <a class="nav-link " id="pills-home-tab-fill" onclick="showProduct(<?php echo  $result['category_id'] ?>)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-shopping-cart mr-1"></i><?php echo  $result['category_name'] ?></a>
+                                            </li>
+                                        <?php
+                                            $i++;
+                                        }
+                                    } else {
+                                        ?>
+                                    <?php
+                                    }
+                                } else {
+                                    ?>
+                                <?php
+                                }
+                                ?>
                             </ul>
                             <div class="tab-content" id="pills-tabContent-1">
                                 <div class="tab-pane fade show active" id="pills-home-fill" role="tabpanel" aria-labelledby="pills-home-tab-fill">
