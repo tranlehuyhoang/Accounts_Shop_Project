@@ -4,7 +4,7 @@ include_once __DIR__ . '/../helpers/format.php';
 ?>
 
 <?php
-class brand
+class product
 {
     private $db;
     private $fm;
@@ -13,7 +13,7 @@ class brand
         $this->db = new Database();
         $this->fm = new Format();
     }
-    public function insert_brand($data)
+    public function insert_product($data)
     {
         $categoryname = mysqli_real_escape_string($this->db->link, $data['categoryname']);
 
@@ -21,7 +21,7 @@ class brand
             $arlet = "<div class='alert alert-danger' role='alert'>Category must not be empty</div>";
             return $arlet;
         } else {
-            $query = "INSERT INTO tbl_brand(categoryname) VALUES ('$categoryname')";
+            $query = "INSERT INTO tbl_product(categoryname) VALUES ('$categoryname')";
             $result = $this->db->insert($query);
             if ($result) {
                 $arlet = "<div class='alert alert-success' role='alert'>Insert Category Successfully</div>";
@@ -33,16 +33,16 @@ class brand
         }
     }
 
-    public function show_brand()
+    public function show_product()
     {
-        $query = "SELECT * FROM clone_brand order by brand_id desc";
+        $query = "SELECT * FROM clone_product order by brand_id desc";
         $result = $this->db->select($query);
 
         return $result;
     }
 
 
-    public function update_brand($data, $id)
+    public function update_product($data, $id)
     {
         $categoryname = mysqli_real_escape_string($this->db->link, $data['categoryname']);
         $id = mysqli_real_escape_string($this->db->link, $id);
@@ -51,7 +51,7 @@ class brand
             $arlet = "<div class='alert alert-danger' role='alert'>Category name empty</div>";
             return $arlet;
         } else {
-            $query = "UPDATE tbl_brand SET categoryname = '$categoryname' WHERE categoryid = '$id'";
+            $query = "UPDATE tbl_product SET categoryname = '$categoryname' WHERE categoryid = '$id'";
             $result = $this->db->update($query);
             if ($result) {
                 $arlet = "<div class='alert alert-success' role='alert'>Update Category Successfully</div>";
@@ -63,10 +63,10 @@ class brand
             }
         }
     }
-    public function delete_brand($id)
+    public function delete_product($id)
     {
         $id = mysqli_real_escape_string($this->db->link, $id);
-        $query = "DELETE FROM tbl_brand WHERE categoryid = '$id'";
+        $query = "DELETE FROM tbl_product WHERE categoryid = '$id'";
         $result = $this->db->delete($query);
 
 
@@ -80,10 +80,16 @@ class brand
         }
     }
 
-    public function getbrandbycat($id)
-
+    public function countProduct($id)
     {
-        $query = "SELECT * FROM clone_brand WHERE brand_category = '$id' order by brand_id  desc";
+        $query = "SELECT COUNT(*) AS total FROM clone_product WHERE product_brand = '$id' AND product_selled = '0'";
+        $result = $this->db->select($query);
+
+        return $result;
+    }
+    public function countProductselled($id)
+    {
+        $query = "SELECT COUNT(*) AS total FROM clone_product WHERE product_brand = '$id' AND product_selled = '1'";
         $result = $this->db->select($query);
 
         return $result;

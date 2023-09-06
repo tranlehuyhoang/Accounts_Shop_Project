@@ -2,8 +2,12 @@
 session_start();
 include_once __DIR__ .  '/../classes/user.class.php';
 include_once __DIR__ .  '/../classes/category.class.php';
+include_once __DIR__ .  '/../classes/brand.class.php';
+include_once __DIR__ .  '/../classes/product.class.php';
 $user = new user();
 $category = new category();
+$brand = new brand();
+$product = new product();
 
 if (isset($_SESSION['clone_user_id'])) {
     $getuserbyid = $user->getuserbyid($_SESSION['clone_user_id']);
@@ -539,7 +543,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                             <li class="dropdown-item d-flex ">
-                                                <a href="../client/login">Đăng Nhập</a>
+                                                <a href="../client/login.php">Đăng Nhập</a>
                                             </li>
                                             <li class="dropdown-item d-flex ">
                                                 <a href="../client/register.php">Đăng Ký</a>
