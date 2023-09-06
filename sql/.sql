@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 06, 2023 at 05:55 PM
+-- Generation Time: Sep 06, 2023 at 07:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -87,17 +87,19 @@ CREATE TABLE `clone_invoices` (
 --
 
 INSERT INTO `clone_invoices` (`invoices_id`, `invoices_price`, `invoices_content`, `invoices_status`, `invoices_user`, `invoices_date`) VALUES
-(1, 120000, 'LZ67AB', 0, 6, '2023-09-06 14:53:42'),
-(2, 120000, 'P2H3D7', 0, 6, '2023-09-06 14:53:50'),
-(3, 15000, 'JL4OO9', 0, 6, '2023-09-06 14:54:45'),
-(4, 15000, 'KSIG4N', 0, 6, '2023-09-06 14:58:33'),
-(5, 110000, 'W1XW31', 0, 6, '2023-09-06 14:58:51'),
-(6, 12000, 'SB7TCN', 0, 6, '2023-09-06 15:09:37'),
+(1, 120000, 'LZ67AB', 1, 6, '2023-09-06 14:53:42'),
+(2, 120000, 'P2H3D7', 1, 6, '2023-09-06 14:53:50'),
+(3, 15000, 'JL4OO9', 1, 6, '2023-09-06 14:54:45'),
+(4, 15000, 'KSIG4N', 1, 6, '2023-09-06 14:58:33'),
+(5, 110000, 'W1XW31', 1, 6, '2023-09-06 14:58:51'),
+(6, 12000, 'SB7TCN', 1, 6, '2023-09-06 15:09:37'),
 (7, 12000, 'XNT4JK', 0, 6, '2023-09-06 15:10:34'),
 (8, 12000, 'EFY587', 0, 6, '2023-09-06 15:10:43'),
 (9, 1500000, '22LYU6', 0, 6, '2023-09-06 15:13:09'),
 (10, 12000, '3FCTQR', 0, 6, '2023-09-06 15:14:05'),
-(11, 15000, '94H6BB', 0, 6, '2023-09-06 15:27:47');
+(11, 15000, '94H6BB', 0, 6, '2023-09-06 15:27:47'),
+(12, 123123, '1RLFD8', 0, 5, '2023-09-06 16:27:55'),
+(13, 34234234, 'BCUBVA', 0, 5, '2023-09-06 16:28:54');
 
 -- --------------------------------------------------------
 
@@ -148,7 +150,7 @@ INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_ema
 (3, '2', 'c81e728d9d4c2f636f067f89cc14862c', '1@1', 0, '2023-09-06 08:26:15'),
 (4, '123', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:29:22'),
 (5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 0, '2023-09-06 08:33:55'),
-(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 100000, '2023-09-06 09:43:07');
+(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 852000, '2023-09-06 09:43:07');
 
 --
 -- Indexes for dumped tables
@@ -204,7 +206,7 @@ ALTER TABLE `clone_category`
 -- AUTO_INCREMENT for table `clone_invoices`
 --
 ALTER TABLE `clone_invoices`
-  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `clone_product`
