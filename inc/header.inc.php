@@ -1,5 +1,15 @@
 <?php
-include_once __DIR__ .  '/../classes/category.class.php';
+session_start();
+include_once __DIR__ .  '/../classes/user.class.php';
+$user = new user();
+
+if (isset($_SESSION['clone_user_id'])) {
+    $getuserbyid = $user->getuserbyid($_SESSION['clone_user_id']);
+}
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    $user->logout();
+}
+
 ?>
 <!doctype html>
 <html>
@@ -114,7 +124,7 @@ include_once __DIR__ .  '/../classes/category.class.php';
         <div class="iq-sidebar sidebar-default">
 
             <div class="iq-sidebar-logo d-flex align-items-end justify-content-between">
-                <a href="https://clonesnew.com/" class="header-logo">
+                <a href="../client/home.php" class="header-logo">
                     <img src="../assets/storage/images/logo_dark_H7W.png" class="img-fluid rounded-normal light-logo"
                         alt="logo">
                     <img src="../assets/storage/images/logo_dark_H7W.png"
@@ -305,8 +315,13 @@ include_once __DIR__ .  '/../classes/category.class.php';
             </div>
         </div>
 
+
         <?php
-        if (true) {
+        if (isset($getuserbyid)) {
+            if ($getuserbyid && $getuserbyid->num_rows > 0) {
+                $i = 0;
+                while ($result = $getuserbyid->fetch_assoc()) {
+                    # code...
         ?>
         <div class="iq-top-navbar">
             <div class="iq-navbar-custom">
@@ -319,7 +334,7 @@ include_once __DIR__ .  '/../classes/category.class.php';
                         </svg>
                         <span class="badge badge2 border border-primary text-primary"><i
                                 class="fas fa-wallet mr-1"></i>Ví:
-                            <b>3.558đ</b></span>
+                            <b><?php echo  number_format($result['user_asset']) ?>đ</b></span>
                         <!--  -->
                     </div>
                     <div class="d-flex align-items-center">
@@ -451,7 +466,7 @@ include_once __DIR__ .  '/../classes/category.class.php';
                                         aria-expanded="false">
                                         <img src="https://clonesnew.com/public/datum/assets/images/user/1.jpg"
                                             class="img-fluid avatar-rounded" alt="user">
-                                        <span class="mb-0 ml-2 user-name">2508roblox</span>
+                                        <span class="mb-0 ml-2 user-name"><?php echo  $result['user_username'] ?></span>
 
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -516,7 +531,8 @@ include_once __DIR__ .  '/../classes/category.class.php';
                                                     d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
                                                 </path>
                                             </svg>
-                                            <a href="https://clonesnew.com/client/logout">Đăng xuất</a>
+                                            <a href="?action=logout"
+                                                onclick="return  confirm('Xác nhận đăng xuất')">Đăng xuất</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -527,9 +543,14 @@ include_once __DIR__ .  '/../classes/category.class.php';
             </div>
         </div>
         <?php
+                    $i++;
+                }
+            } else {
+                ?>
+        <?php
+            }
         } else {
-        ?>
-
+            ?>
         <div class="iq-top-navbar">
             <div class="iq-navbar-custom">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
@@ -632,9 +653,9 @@ include_once __DIR__ .  '/../classes/category.class.php';
             </div>
         </div>
         <?php
-
         }
         ?>
+
 
 
         <script>

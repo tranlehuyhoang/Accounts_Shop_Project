@@ -1,4 +1,5 @@
 <?php
+
 include_once __DIR__ . '/../lib/database.php';
 include_once __DIR__ . '/../helpers/format.php';
 
@@ -16,38 +17,35 @@ class user
     }
     public function insert_user($data)
     {
-        $userroles = mysqli_real_escape_string($this->db->link, $data['userroles']);
-        $username = mysqli_real_escape_string($this->db->link, $data['username']);
-        $useremail = mysqli_real_escape_string($this->db->link, $data['useremail']);
-        $userpass = mysqli_real_escape_string($this->db->link, md5($data['userpass']));
+        $user_username = mysqli_real_escape_string($this->db->link, $data['user_username']);
+        $user_email = mysqli_real_escape_string($this->db->link, $data['user_email']);
+        $user_password = mysqli_real_escape_string($this->db->link, md5($data['user_password']));
 
-        if ($userroles == '' || $username == '' || $useremail == '' || $userpass == '') {
-            $arlet = "<div class='alert alert-danger' role='alert'>Code must not be empty</div>";
-            return $arlet;
+        // Kiểm tra xem user_username đã tồn tại trong cơ sở dữ liệu chưa
+        $check_query = "SELECT * FROM clone_user WHERE user_username = '$user_username'";
+        $check_result = $this->db->select($check_query);
+
+        if ($check_result) {
+            $alert = "400";
+            return $alert;
+        }
+
+        // Tiếp tục thêm mới người dùng
+        $query = "INSERT INTO clone_user(user_username, user_email, user_password) VALUES ('$user_username', '$user_email', '$user_password')";
+        $result = $this->db->insert($query);
+
+        if ($result) {
+            $alert = "200";
+            return $alert;
         } else {
-            $check_register = "SELECT *
-            FROM tbl_users WHERE useremail = '$useremail'  LIMIT 1";
-            $check = $this->db->select($check_register);
-            if (!isset($check)) {
-                $arlet = "<div class='alert alert-danger' role='alert'>Email exit</div>";
-                return $arlet;
-            } else {
-                $query = "INSERT INTO tbl_users(userroles,username,useremail,userpass) VALUES ('$userroles','$username','$useremail','$userpass')";
-                $result = $this->db->insert($query);
-                if ($result) {
-                    $arlet = "<div class='alert alert-success' role='alert'>Insert Code Successfully</div>";
-                    return $arlet;
-                } else {
-                    $arlet = "<div class='alert alert-danger' role='alert'>Insert Code Successfully</div>";
-                    return $arlet;
-                }
-            }
+            $alert = "404";
+            return $alert;
         }
     }
 
     public function show_user()
     {
-        $query = "SELECT * FROM tbl_users order by userid desc";
+        $query = "SELECT * FROM user_user order by userid desc";
         $result = $this->db->select($query);
 
         return $result;
@@ -63,7 +61,7 @@ class user
             $arlet = "<div class='alert alert-danger' role='alert'>Category name empty</div>";
             return $arlet;
         } else {
-            $query = "UPDATE tbl_users SET userroles = '$userroles'  WHERE userid = '$id'";
+            $query = "UPDATE user_user SET userroles = '$userroles'  WHERE userid = '$id'";
             $result = $this->db->update($query);
             if ($result) {
                 $arlet = "<div class='alert alert-success' role='alert'>Update Category Successfully</div>";
@@ -78,7 +76,7 @@ class user
     public function delete_user($id)
     {
         $id = mysqli_real_escape_string($this->db->link, $id);
-        $query = "DELETE FROM tbl_users WHERE userid = '$id'";
+        $query = "DELETE FROM user_user WHERE userid = '$id'";
         $result = $this->db->delete($query);
 
 
@@ -95,7 +93,7 @@ class user
     {
 
 
-        $query = "SELECT * FROM tbl_users WHERE userid = '$id'";
+        $query = "SELECT * FROM clone_user WHERE user_id = '$id'";
         $result = $this->db->select($query);
 
         return $result;
@@ -104,7 +102,7 @@ class user
     {
 
 
-        $query = "SELECT * FROM tbl_users WHERE userid = '$id'";
+        $query = "SELECT * FROM user_user WHERE userid = '$id'";
         $result = $this->db->select($query);
         if ($result) {
             if ($result && $result->num_rows > 0) {
@@ -119,38 +117,35 @@ class user
 
     public function login($data)
     {
-        $userpass = mysqli_real_escape_string($this->db->link, md5($data['userpass']));
-        $useremail = mysqli_real_escape_string($this->db->link, $data['useremail']);
-        $query = "SELECT * FROM tbl_users WHERE  userpass = '$userpass'AND useremail = '$useremail' ";
+        $user_username = mysqli_real_escape_string($this->db->link, $data['user_username']);
+        $user_password = mysqli_real_escape_string($this->db->link, md5($data['user_password']));
+        $query = "SELECT * FROM clone_user WHERE  user_username = '$user_username'AND user_password = '$user_password' ";
         $result = $this->db->select($query);
 
         if ($result) {
             if ($result && $result->num_rows > 0) {
                 while ($resultss = $result->fetch_assoc()) {
-                    if ($resultss['userroles'] == 2) {
-                        $_SESSION['useradmin'] = $resultss['userid'];
-                        header('Location:page/Home.php');
-                    }
+                    $_SESSION['clone_user_id'] = $resultss['user_id'];
+                    header('Location:../client/home.php');
                 }
             }
-            $arlet = "<div class='alert alert-success' role='alert'>Login Successfully</div>";
-            return $arlet;
+            $alertss = "200";
+            return $alertss;
         } else {
-            $arlet = "<div class='alert alert-danger' role='alert'>Login Error </div>";
+            $alerts = "400";
 
-            return $arlet;
+            return $alerts;
         }
     }
     public function logout()
     {
-        unset($_SESSION['useradmin']);
-        unset($_SESSION['userid']);
+        unset($_SESSION['clone_user_id']);
     }
     public function loginuser($data)
     {
         $userpass = mysqli_real_escape_string($this->db->link, md5($data['userpass']));
         $useremail = mysqli_real_escape_string($this->db->link, $data['useremail']);
-        $query = "SELECT * FROM tbl_users WHERE  userpass = '$userpass'AND useremail = '$useremail' ";
+        $query = "SELECT * FROM user_user WHERE  userpass = '$userpass'AND useremail = '$useremail' ";
         $result = $this->db->select($query);
 
         if ($result) {
@@ -170,7 +165,7 @@ class user
     public function countusser()
     {
 
-        $query = "SELECT COUNT(*) AS total_users FROM tbl_users; ";
+        $query = "SELECT COUNT(*) AS total_users FROM user_user; ";
         $result = $this->db->select($query);
 
 

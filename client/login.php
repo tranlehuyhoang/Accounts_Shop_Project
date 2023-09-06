@@ -1,4 +1,19 @@
-<!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+<?php
+session_start();
+include_once __DIR__ .  '/../classes/user.class.php';
+
+$user = new user();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+    $login = $user->login($_POST);
+}
+if (isset($_SESSION['clone_user_id'])) {
+    header('Location: ../client/home.php');
+    echo $_SESSION['clone_user_id'];
+    # code...
+}
+?>
 <!doctype html>
 <html>
 
@@ -151,12 +166,67 @@
                                     <p class="line-around text-secondary mb-0"><span
                                             class="line-around-1">hoặc</span></p>
                                 </div> -->
-                                <form>
+                                <script src="../public/datum/assets/js/backend-bundle.min.js"></script>
+                                <!-- Chart Custom JavaScript -->
+                                <script src="../public/datum/assets/js/customizer.js"></script>
+                                <script src="../public/datum/assets/js/sidebar.js"></script>
+                                <!-- Flextree Javascript-->
+                                <script src="../public/datum/assets/js/flex-tree.min.js"></script>
+                                <script src="../public/datum/assets/js/tree.js"></script>
+                                <!-- Table Treeview JavaScript -->
+                                <script src="../public/datum/assets/js/table-treeview.js"></script>
+                                <!-- SweetAlert JavaScript -->
+                                <script src="../public/datum/assets/js/sweetalert.js"></script>
+                                <!-- Vectoe Map JavaScript -->
+                                <script src="../public/datum/assets/js/vector-map-custom.js"></script>
+                                <!-- Chart Custom JavaScript -->
+                                <script src="../public/datum/assets/js/chart-custom.js"></script>
+                                <script src="../public/datum/assets/js/charts/01.js"></script>
+                                <script src="../public/datum/assets/js/charts/02.js"></script>
+                                <!-- slider JavaScript -->
+                                <script src="../public/datum/assets/js/slider.js"></script>
+                                <!-- Emoji picker -->
+                                <script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module">
+                                </script>
+                                <!-- app JavaScript -->
+                                <script src="../public/datum/assets/js/app.js"></script>
+                                <form method="post">
+                                    <?php if (isset($login)) {
+                                        if ($login == '200') {
+                                    ?>
+                                            <script type="text/javascript">
+                                                Swal.fire({
+                                                    title: 'Thành công!',
+                                                    text: 'Đăng nhập thành công',
+                                                    icon: 'success',
+                                                    confirmButtonText: 'OK'
+                                                });
+                                            </script>
+                                            <?php
+                                        } else {
+
+                                            if ($login == '400') {
+
+                                            ?>
+                                                <script type="text/javascript">
+                                                    Swal.fire({
+                                                        title: 'Thất bại!',
+                                                        text: 'Sai tài khoản hoặc mật khẩu',
+                                                        icon: 'error',
+                                                        confirmButtonText: 'OK'
+                                                    });
+                                                </script>
+                                    <?php
+
+                                            }
+                                        }
+                                    }
+                                    ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="text-secondary">Tên đăng nhập</label>
-                                                <input class="form-control" type="text" id="username" value="" placeholder="Enter Username">
+                                                <input class="form-control" type="text" name="user_username" required id="username" value="" placeholder="Enter Username">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -166,7 +236,7 @@
                                                     <label><a href="https://clonesnew.com/client/forgot-password">Quên
                                                             mật khẩu</a></label>
                                                 </div>
-                                                <input class="form-control" type="password" id="password" value="" placeholder="Vui lòng nhập mật khẩu">
+                                                <input class="form-control" name="user_password" required type="password" id="password" value="" placeholder="Vui lòng nhập mật khẩu">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -178,7 +248,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" id="btnLogin" class="btn btn-primary btn-block mt-2">Đăng
+                                    <button type="submit" id="btnLogin" class="btn btn-primary btn-block mt-2">Đăng
                                         Nhập</button>
                                     <div class="col-lg-12 mt-3">
                                         <p class="mb-0 text-center">Bạn không có tài khoản? <a href="https://clonesnew.com/client/register">Đăng Ký</a></p>
@@ -192,91 +262,69 @@
         </section>
     </div>
     <!-- Backend Bundle JavaScript -->
-    <script src="../public/datum/assets/js/backend-bundle.min.js"></script>
-    <!-- Chart Custom JavaScript -->
-    <script src="../public/datum/assets/js/customizer.js"></script>
-    <script src="../public/datum/assets/js/sidebar.js"></script>
-    <!-- Flextree Javascript-->
-    <script src="../public/datum/assets/js/flex-tree.min.js"></script>
-    <script src="../public/datum/assets/js/tree.js"></script>
-    <!-- Table Treeview JavaScript -->
-    <script src="../public/datum/assets/js/table-treeview.js"></script>
-    <!-- SweetAlert JavaScript -->
-    <script src="../public/datum/assets/js/sweetalert.js"></script>
-    <!-- Vectoe Map JavaScript -->
-    <script src="../public/datum/assets/js/vector-map-custom.js"></script>
-    <!-- Chart Custom JavaScript -->
-    <script src="../public/datum/assets/js/chart-custom.js"></script>
-    <script src="../public/datum/assets/js/charts/01.js"></script>
-    <script src="../public/datum/assets/js/charts/02.js"></script>
-    <!-- slider JavaScript -->
-    <script src="../public/datum/assets/js/slider.js"></script>
-    <!-- Emoji picker -->
-    <script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module"></script>
-    <!-- app JavaScript -->
-    <script src="../public/datum/assets/js/app.js"></script>
+
 </body>
 
 </html>
 
 
 <script type="text/javascript">
-    Swal.fire({
-        title: 'Hello!',
-        text: 'This is a basic alert',
-        icon: 'warning',
-        confirmButtonText: 'OK'
-    });
-    cuteToast({
-        type: "success",
-        message: 'thành công',
-        timer: 5000
-    });
-    $("#btnLogin").on("click", function() {
-        $('#btnLogin').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...').prop('disabled',
-            true);
-        $.ajax({
-            url: "https://clonesnew.com/ajaxs/client/login.php",
-            method: "POST",
-            dataType: "JSON",
-            data: {
-                username: $("#username").val(),
-                password: $("#password").val(),
-                recaptcha: $("#g-recaptcha-response").val()
-            },
-            success: function(respone) {
-                if (respone.status == 'success') {
-                    cuteToast({
-                        type: "success",
-                        message: respone.msg,
-                        timer: 5000
-                    });
-                    setTimeout("location.href = 'https://clonesnew.com/client/home';", 100);
-                } else if (respone.status == 'verify') {
-                    cuteToast({
-                        type: "warning",
-                        message: respone.msg,
-                        timer: 5000
-                    });
-                    setTimeout("location.href = '" + respone.url + "';", 1000);
-                } else {
-                    Swal.fire(
-                        'Thất bại',
-                        respone.msg,
-                        'error'
-                    );
-                }
-                $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
-            },
-            error: function() {
-                cuteToast({
-                    type: "error",
-                    message: 'Không thể xử lý',
-                    timer: 5000
-                });
-                $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
-            }
+    // Swal.fire({
+    //     title: 'Hello!',
+    //     text: 'This is a basic alert',
+    //     icon: 'warning',
+    //     confirmButtonText: 'OK'
+    // });
+    // cuteToast({
+    //     type: "success",
+    //     message: 'thành công',
+    //     timer: 5000
+    // });
+    // $("#btnLogin").on("click", function() {
+    //     $('#btnLogin').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...').prop('disabled',
+    //         true);
+    //     $.ajax({
+    //         url: "https://clonesnew.com/ajaxs/client/login.php",
+    //         method: "POST",
+    //         dataType: "JSON",
+    //         data: {
+    //             username: $("#username").val(),
+    //             password: $("#password").val(),
+    //             recaptcha: $("#g-recaptcha-response").val()
+    //         },
+    //         success: function(respone) {
+    //             if (respone.status == 'success') {
+    //                 cuteToast({
+    //                     type: "success",
+    //                     message: respone.msg,
+    //                     timer: 5000
+    //                 });
+    //                 setTimeout("location.href = 'https://clonesnew.com/client/home';", 100);
+    //             } else if (respone.status == 'verify') {
+    //                 cuteToast({
+    //                     type: "warning",
+    //                     message: respone.msg,
+    //                     timer: 5000
+    //                 });
+    //                 setTimeout("location.href = '" + respone.url + "';", 1000);
+    //             } else {
+    //                 Swal.fire(
+    //                     'Thất bại',
+    //                     respone.msg,
+    //                     'error'
+    //                 );
+    //             }
+    //             $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
+    //         },
+    //         error: function() {
+    //             cuteToast({
+    //                 type: "error",
+    //                 message: 'Không thể xử lý',
+    //                 timer: 5000
+    //             });
+    //             $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
+    //         }
 
-        });
-    });
+    //     });
+    // });
 </script>

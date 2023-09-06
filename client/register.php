@@ -1,4 +1,6 @@
-<!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+<?php
+session_start();
+?>
 <!doctype html>
 <html>
 
@@ -32,7 +34,9 @@
     <link rel="stylesheet" href="../resources/css/customize.css">
     <script src="../resources/js/jquery.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- sweetalert2-->
     <link class="main-stylesheet" href="../public/sweetalert2/default.css" rel="stylesheet" type="text/css">
     <script src="../public/sweetalert2/sweetalert2.js"></script>
@@ -44,56 +48,56 @@
     <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
 
-        .card-product {
-            color: white;
-            background-image: linear-gradient(to right, #060606, #060606, #060606);
-        }
+    .card-product {
+        color: white;
+        background-image: linear-gradient(to right, #060606, #060606, #060606);
+    }
 
-        #loading-center {
-            background: url(../assets/storage/images/gif_loaderPZV.png) no-repeat scroll 50%;
-            background-size: 20%;
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
+    #loading-center {
+        background: url(../assets/storage/images/gif_loaderPZV.png) no-repeat scroll 50%;
+        background-size: 20%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
 
-        .change-mode .custom-switch.custom-switch-icon label.custom-control-label:after {
-            top: 0;
-            left: 0;
-            width: 35px;
-            height: 30px;
-            border-radius: 5px 0 0 5px;
-            background-color: #060606;
-            border-color: #060606;
-            z-index: 0;
-        }
+    .change-mode .custom-switch.custom-switch-icon label.custom-control-label:after {
+        top: 0;
+        left: 0;
+        width: 35px;
+        height: 30px;
+        border-radius: 5px 0 0 5px;
+        background-color: #060606;
+        border-color: #060606;
+        z-index: 0;
+    }
     </style>
     <!-- Script Header -->
     <style>
-        .iq-sidebar-menu .side-menu li a {
-            color: #f1f1f1;
-        }
+    .iq-sidebar-menu .side-menu li a {
+        color: #f1f1f1;
+    }
 
-        .text-uppercase {
-            color: #f1f1f1;
-        }
+    .text-uppercase {
+        color: #f1f1f1;
+    }
     </style>
 </head>
 <!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
 
 
 <style>
-    .bg-image {
-        background-position: 0 50%;
-        background-size: cover;
-    }
+.bg-image {
+    background-position: 0 50%;
+    background-size: cover;
+}
 </style>
 
-<body class="bg-image" style="background-image: url(https://clonesnew.com/assets/storage/images/bg_register05J.png);">
+<body class="bg-image" style="background-image: url(../assets/storage/images/bg_register05J.png);">
     <!-- loader Start -->
     <div id="loading">
         <div id="loading-center">
@@ -108,8 +112,10 @@
                         <div class="card p-3">
                             <div class="card-body">
                                 <div class="auth-logo">
-                                    <img src="https://clonesnew.com/assets/storage/images/logo_dark_H7W.png" class="img-fluid  rounded-normal  darkmode-logo" alt="logo">
-                                    <img src="https://clonesnew.com/assets/storage/images/logo_light_QPB.png" class="img-fluid rounded-normal light-logo" alt="logo">
+                                    <img src="../assets/storage/images/logo_dark_H7W.png"
+                                        class="img-fluid  rounded-normal  darkmode-logo" alt="logo">
+                                    <img src="../assets/storage/images/logo_light_QPB.png"
+                                        class="img-fluid rounded-normal light-logo" alt="logo">
                                 </div>
                                 <h3 class="mb-3 font-weight-bold text-center">Đăng Ký</h3>
                                 <!-- <p class="text-center text-secondary mb-4">
@@ -153,18 +159,84 @@
                                     <p class="line-around text-secondary mb-0"><span
                                             class="line-around-1">hoặc</span></p>
                                 </div> -->
-                                <form>
+                                <script src="../public/datum/assets/js/backend-bundle.min.js"></script>
+                                <!-- Chart Custom JavaScript -->
+                                <script src="../public/datum/assets/js/customizer.js"></script>
+                                <script src="../public/datum/assets/js/sidebar.js"></script>
+                                <!-- Flextree Javascript-->
+                                <script src="../public/datum/assets/js/flex-tree.min.js"></script>
+                                <script src="../public/datum/assets/js/tree.js"></script>
+                                <!-- Table Treeview JavaScript -->
+                                <script src="../public/datum/assets/js/table-treeview.js"></script>
+                                <!-- SweetAlert JavaScript -->
+                                <script src="../public/datum/assets/js/sweetalert.js"></script>
+                                <!-- Vectoe Map JavaScript -->
+                                <script src="../public/datum/assets/js/vector-map-custom.js"></script>
+                                <!-- Chart Custom JavaScript -->
+                                <script src="../public/datum/assets/js/chart-custom.js"></script>
+                                <script src="../public/datum/assets/js/charts/01.js"></script>
+                                <script src="../public/datum/assets/js/charts/02.js"></script>
+                                <!-- slider JavaScript -->
+                                <script src="../public/datum/assets/js/slider.js"></script>
+                                <!-- Emoji picker -->
+                                <script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module">
+                                </script>
+                                <!-- app JavaScript -->
+                                <script src="../public/datum/assets/js/app.js"></script>
+
+                                <?php
+                                include_once __DIR__ .  '/../classes/user.class.php';
+
+                                $user = new user();
+                                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+                                    $register = $user->insert_user($_POST);
+                                }
+                                ?>
+                                <form method="post">
+                                    <?php if (isset($register)) {
+                                        if ($register == '200') {
+                                    ?>
+                                    <script type="text/javascript">
+                                    Swal.fire({
+                                        title: 'Thành công!',
+                                        text: 'Đăng ký thành công',
+                                        icon: 'success',
+                                        confirmButtonText: 'OK'
+                                    });
+                                    </script>
+                                    <?php
+                                        } else {
+                                            if ($register == '400') {
+
+                                            ?>
+                                    <script type="text/javascript">
+                                    Swal.fire({
+                                        title: 'Thất bại!',
+                                        text: 'Username đã tồn tại',
+                                        icon: 'error',
+                                        confirmButtonText: 'OK'
+                                    });
+                                    </script>
+                                    <?php
+
+                                            }
+                                        }
+                                    } ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="text-secondary">Tên đăng nhập</label>
-                                                <input class="form-control" type="text" id="username" placeholder="Enter Username">
+                                                <input required class="form-control" name="user_username" type="text"
+                                                    id="user_username" placeholder="Enter Username">
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="text-secondary">Địa chỉ Email</label>
-                                                <input class="form-control" type="email" id="email" placeholder="Enter Email">
+                                                <input required class="form-control" type="email" id="user_email"
+                                                    name="user_email" placeholder="Enter Email">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -172,7 +244,8 @@
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <label class="text-secondary">Mật khẩu</label>
                                                 </div>
-                                                <input class="form-control" type="password" id="password" placeholder="Vui lòng nhập mật khẩu">
+                                                <input required class="form-control" type="password" id="user_password"
+                                                    name="user_password" placeholder="Vui lòng nhập mật khẩu">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -180,7 +253,8 @@
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <label class="text-secondary">Nhập lại mật khẩu</label>
                                                 </div>
-                                                <input class="form-control" type="password" id="repassword" placeholder="Vui lòng nhập lại mật khẩu">
+                                                <input required class="form-control" type="password" id="user_password"
+                                                    name="user_password" placeholder="Vui lòng nhập lại mật khẩu">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -192,10 +266,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" id="btnRegister" class="btn btn-primary btn-block mt-2">Đăng
+                                    <button type="submit" class="btn btn-primary btn-block mt-2">Đăng
                                         Ký</button>
                                     <div class="col-lg-12 mt-3">
-                                        <p class="mb-0 text-center">Bạn đã có tài khoản? <a href="https://clonesnew.com/client/login">Đăng Nhập</a></p>
+                                        <p class="mb-0 text-center">Bạn đã có tài khoản? <a
+                                                href="../client/login.php">Đăng Nhập</a></p>
                                     </div>
                                 </form>
                             </div>
@@ -206,75 +281,53 @@
         </section>
     </div>
     <!-- Backend Bundle JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/backend-bundle.min.js"></script>
-    <!-- Chart Custom JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/customizer.js"></script>
-    <script src="https://clonesnew.com/public/datum/assets/js/sidebar.js"></script>
-    <!-- Flextree Javascript-->
-    <script src="https://clonesnew.com/public/datum/assets/js/flex-tree.min.js"></script>
-    <script src="https://clonesnew.com/public/datum/assets/js/tree.js"></script>
-    <!-- Table Treeview JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/table-treeview.js"></script>
-    <!-- SweetAlert JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/sweetalert.js"></script>
-    <!-- Vectoe Map JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/vector-map-custom.js"></script>
-    <!-- Chart Custom JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/chart-custom.js"></script>
-    <script src="https://clonesnew.com/public/datum/assets/js/charts/01.js"></script>
-    <script src="https://clonesnew.com/public/datum/assets/js/charts/02.js"></script>
-    <!-- slider JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/slider.js"></script>
-    <!-- Emoji picker -->
-    <script src="https://clonesnew.com/public/datum/assets/vendor/emoji-picker-element/index.js" type="module"></script>
-    <!-- app JavaScript -->
-    <script src="https://clonesnew.com/public/datum/assets/js/app.js"></script>
+
 </body>
 
 </html>
 
 
 <script type="text/javascript">
-    $("#btnRegister").on("click", function() {
-        $('#btnRegister').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...').prop('disabled',
-            true);
-        $.ajax({
-            url: "https://clonesnew.com/ajaxs/client/register.php",
-            method: "POST",
-            dataType: "JSON",
-            data: {
-                username: $("#username").val(),
-                email: $("#email").val(),
-                password: $("#password").val(),
-                repassword: $("#repassword").val(),
-                recaptcha: $("#g-recaptcha-response").val()
-            },
-            success: function(respone) {
-                if (respone.status == 'success') {
-                    cuteToast({
-                        type: "success",
-                        message: respone.msg,
-                        timer: 5000
-                    });
-                    setTimeout("location.href = 'https://clonesnew.com/client/home';", 100);
-                } else {
-                    Swal.fire(
-                        'Thất bại',
-                        respone.msg,
-                        'error'
-                    );
-                }
-                $('#btnRegister').html('Đăng Ký').prop('disabled', false);
-            },
-            error: function() {
+$("#btnRegister").on("click", function() {
+    $('#btnRegister').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...').prop('disabled',
+        true);
+    $.ajax({
+        url: "https://clonesnew.com/ajaxs/client/register.php",
+        method: "POST",
+        dataType: "JSON",
+        data: {
+            username: $("#username").val(),
+            email: $("#email").val(),
+            password: $("#password").val(),
+            repassword: $("#repassword").val(),
+            recaptcha: $("#g-recaptcha-response").val()
+        },
+        success: function(respone) {
+            if (respone.status == 'success') {
                 cuteToast({
-                    type: "error",
-                    message: 'Không thể xử lý',
+                    type: "success",
+                    message: respone.msg,
                     timer: 5000
                 });
-                $('#btnRegister').html('Đăng Ký').prop('disabled', false);
+                setTimeout("location.href = 'https://clonesnew.com/client/home';", 100);
+            } else {
+                Swal.fire(
+                    'Thất bại',
+                    respone.msg,
+                    'error'
+                );
             }
+            $('#btnRegister').html('Đăng Ký').prop('disabled', false);
+        },
+        error: function() {
+            cuteToast({
+                type: "error",
+                message: 'Không thể xử lý',
+                timer: 5000
+            });
+            $('#btnRegister').html('Đăng Ký').prop('disabled', false);
+        }
 
-        });
     });
+});
 </script>
