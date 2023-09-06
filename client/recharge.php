@@ -32,7 +32,7 @@ include_once '../inc/header.inc.php';
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-3 mt-3 mt-lg-0 mb-3">
                                     <div type="button" onclick="openModalAmount(5)" class="blur-shadow p-4 shadow-showcase text-center">
-                                        <img src="https://clonesnew.com/assets/storage/images/bank/D15.png" width="200px" height="100px">
+                                        <img src="../assets/storage/images/vietinbank_637018943312743351.jpg" width="200px" height="100px">
                                     </div>
                                 </div>
                             </div>

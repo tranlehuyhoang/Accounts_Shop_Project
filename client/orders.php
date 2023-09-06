@@ -51,7 +51,133 @@ include_once '../inc/header.inc.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="even">
+                                            <td>0</td>
+                                            <td>PCLA1693978818</td>
+                                            <td><b>Clone ngoại new zin (xả hàng) </b></td>
+                                            <td><b style="color:blue;">1</b></td>
+                                            <td><b style="color:red;">600đ</b></td>
+                                            <td><i>2023-09-06 12:40:19</i></td>
+                                            <td><a type="button"
+                                                    href="https://clonesnew.com/client/order/PCLA1693978818"
+                                                    class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                <button type="button"
+                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
+                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button"
+                                                    onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
+                                                    class="btn btn-warning btn-sm">Xoá</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>0</td>
+                                            <td>PCLA1693978818</td>
+                                            <td><b>Clone ngoại new zin (xả hàng) </b></td>
+                                            <td><b style="color:blue;">1</b></td>
+                                            <td><b style="color:red;">600đ</b></td>
+                                            <td><i>2023-09-06 12:40:19</i></td>
+                                            <td><a type="button"
+                                                    href="https://clonesnew.com/client/order/PCLA1693978818"
+                                                    class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                <button type="button"
+                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
+                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button"
+                                                    onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
+                                                    class="btn btn-warning btn-sm">Xoá</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>0</td>
+                                            <td>PCLA1693978818</td>
+                                            <td><b>Clone ngoại new zin (xả hàng) </b></td>
+                                            <td><b style="color:blue;">1</b></td>
+                                            <td><b style="color:red;">600đ</b></td>
+                                            <td><i>2023-09-06 12:40:19</i></td>
+                                            <td><a type="button"
+                                                    href="https://clonesnew.com/client/order/PCLA1693978818"
+                                                    class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                <button type="button"
+                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
+                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button"
+                                                    onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
+                                                    class="btn btn-warning btn-sm">Xoá</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>0</td>
+                                            <td>PCLA1693978818</td>
+                                            <td><b>Clone ngoại new zin (xả hàng) </b></td>
+                                            <td><b style="color:blue;">1</b></td>
+                                            <td><b style="color:red;">600đ</b></td>
+                                            <td><i>2023-09-06 12:40:19</i></td>
+                                            <td><a type="button"
+                                                    href="https://clonesnew.com/client/order/PCLA1693978818"
+                                                    class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                <button type="button"
+                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
+                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button"
+                                                    onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
+                                                    class="btn btn-warning btn-sm">Xoá</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>0</td>
+                                            <td>PCLA1693978818</td>
+                                            <td><b>Clone ngoại new zin (xả hàng) </b></td>
+                                            <td><b style="color:blue;">1</b></td>
+                                            <td><b style="color:red;">600đ</b></td>
+                                            <td><i>2023-09-06 12:40:19</i></td>
+                                            <td><a type="button"
+                                                    href="https://clonesnew.com/client/order/PCLA1693978818"
+                                                    class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                <button type="button"
+                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
+                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button"
+                                                    onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
+                                                    class="btn btn-warning btn-sm">Xoá</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>0</td>
+                                            <td>PCLA1693978818</td>
+                                            <td><b>Clone ngoại new zin (xả hàng) </b></td>
+                                            <td><b style="color:blue;">1</b></td>
+                                            <td><b style="color:red;">600đ</b></td>
+                                            <td><i>2023-09-06 12:40:19</i></td>
+                                            <td><a type="button"
+                                                    href="https://clonesnew.com/client/order/PCLA1693978818"
+                                                    class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                <button type="button"
+                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
+                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button"
+                                                    onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
+                                                    class="btn btn-warning btn-sm">Xoá</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>0</td>
+                                            <td>PCLA1693978818</td>
+                                            <td><b>Clone ngoại new zin (xả hàng) </b></td>
+                                            <td><b style="color:blue;">1</b></td>
+                                            <td><b style="color:red;">600đ</b></td>
+                                            <td><i>2023-09-06 12:40:19</i></td>
+                                            <td><a type="button"
+                                                    href="https://clonesnew.com/client/order/PCLA1693978818"
+                                                    class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                <button type="button"
+                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
+                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button"
+                                                    onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
+                                                    class="btn btn-warning btn-sm">Xoá</button>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd">
                                             <td>0</td>
                                             <td>PCLA1693978818</td>
                                             <td><b>Clone ngoại new zin (xả hàng) </b></td>
