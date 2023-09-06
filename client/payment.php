@@ -1,5 +1,29 @@
-<!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+<?php
+include_once __DIR__ .  '/../classes/invoices.class.php';
+$invoices = new invoices();
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
+    $getinvoices = $invoices->getinvoicesbyid($_GET['bill']);
+
+
+    if (isset($getinvoices)) {
+        if ($getinvoices == '400') {
+?>
+<script type="text/javascript">
+window.location.href = "../client/home.php";
+</script>
+
+<?php
+        } else {
+
+            $getinvoices1 = $invoices->getinvoicesbyid($_GET['bill']);
+            $getinvoices2 = $invoices->getinvoicesbyid($_GET['bill']);
+        }
+    }
+}
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -21,19 +45,15 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="pragma" content="no-cache" />
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet"
-        href="https://clonesnew.com/public/faces/javax.faces.resource/material/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../public/bootstrap.min.css" />
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" />
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="https://clonesnew.com/public/faces/javax.faces.resource/material/css/style.default.css"
-        id="theme-stylesheet" />
+    <link rel="stylesheet" href="../public/style.default.css" id="theme-stylesheet" />
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet"
-        href="https://clonesnew.com/public/faces/javax.faces.resource/material/css/style-version=1.0.css" />
-    <link rel="stylesheet" href="https://clonesnew.com/public/faces/javax.faces.resource/material/css/qr-code.css" />
-    <link rel="stylesheet"
-        href="https://clonesnew.com/public/faces/javax.faces.resource/material/css/qr-code-tablet.css" />
+    <!-- <link rel="stylesheet" href="https://clonesnew.com/public/faces/javax.faces.resource/material/css/style-version=1.0.css" /> -->
+    <link rel="stylesheet" href="../public/qr-code.css" />
+    <!-- <link rel="stylesheet" href="https://clonesnew.com/public/faces/javax.faces.resource/material/css/qr-code-tablet.css" /> -->
     <!-- Font Awesome CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
@@ -41,11 +61,10 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Cute Alert -->
-    <link class="main-stylesheet" href="https://clonesnew.com/public/cute-alert/style.css" rel="stylesheet"
-        type="text/css">
-    <script src="https://clonesnew.com/public/cute-alert/cute-alert.js"></script>
+    <link class="main-stylesheet" href="../public/cute-alert/style.css" rel="stylesheet" type="text/css">
+    <script src="../public/cute-alert/cute-alert.js"></script>
     <!-- jQuery -->
-    <script src="https://clonesnew.com/public/js/jquery-3.6.0.js"></script>
+    <script src="../public/js/jquery-3.6.0.js"></script>
     <style type="text/css">
     .container-fluid {
         width: 40% !important;
@@ -96,15 +115,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-4 left">
+                    <?php
+                    if (isset($getinvoices2)) {
+                        if ($getinvoices2 && $getinvoices2->num_rows > 0) {
+                            $i = 0;
+                            while ($resultsa = $getinvoices2->fetch_assoc()) {
+                                # code...
+                    ?>
                     <div class="info-box">
                         <div class="receipt">
-                            <img src="https://clonesnew.com/assets/storage/images/logo_dark_H7W.png" width="100%" />
+                            <img src="../assets/storage/images/logo_dark_H7W.png" width="100%" />
                         </div>
                         <div class="entry">
                             <p><i class="fa fa-university" aria-hidden="true"></i>
                                 <span style="padding-left: 5px;">Ngân Hàng</span>
                                 <br />
-                                <span style="padding-left: 25px;word-break: keep-all;">ACB</span>
+                                <span style="padding-left: 25px;word-break: keep-all;">VTB</span>
                             </p>
                         </div>
                         <div class="entry">
@@ -112,7 +138,7 @@
                                 <span style="padding-left: 5px;">Số tài khoản</span>
                                 <br />
                                 <b id="copyStk"
-                                    style="padding-left: 25px;word-break: keep-all;color:greenyellow;">27470627</b>
+                                    style="padding-left: 25px;word-break: keep-all;color:greenyellow;">105879492155</b>
                                 <i onclick="copy()" data-clipboard-target="#copyStk" class="fas fa-copy copy"></i>
                             </p>
                         </div>
@@ -120,14 +146,15 @@
                             <p><i class="fa fa-user" aria-hidden="true"></i>
                                 <span style="padding-left: 5px;">Chủ tài khoản</span>
                                 <br />
-                                <span style="padding-left: 25px;word-break: keep-all;">NGUYEN VAN HOA</span>
+                                <span style="padding-left: 25px;word-break: keep-all;">TRAN LE HOANG GIANG</span>
                             </p>
                         </div>
                         <div class="entry">
                             <p><i class="fa fa-money" aria-hidden="true"></i>
                                 <span style="padding-left: 5px;">Số tiền cần thanh toán</span>
                                 <br />
-                                <b style="padding-left: 25px;color:aqua;">10.000đ</b>
+                                <b
+                                    style="padding-left: 25px;color:aqua;"><?php echo number_format($resultsa['invoices_price']) ?>đ</b>
                             </p>
                         </div>
                         <div class="entry">
@@ -135,7 +162,7 @@
                                 <span style="padding-left: 5px;">Nội dung chuyển khoản</span>
                                 <br />
                                 <b id="copyNoiDung"
-                                    style="padding-left: 25px;word-break: keep-all;color:yellow;">UB5913</b>
+                                    style="padding-left: 25px;word-break: keep-all;color:yellow;"><?php echo $resultsa['invoices_content'] ?></b>
                                 <i onclick="copy()" data-clipboard-target="#copyNoiDung" class="fas fa-copy copy"></i>
                             </p>
                         </div>
@@ -149,6 +176,18 @@
                             </p>
                         </div>
                     </div>
+                    <?php
+                                $i++;
+                            }
+                        } else {
+                            ?>
+                    <?php
+                        }
+                    } else {
+                        ?>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-8 right">
                     <div class="content">
@@ -167,7 +206,68 @@
                                                     <a>Sử dụng <b> App Internet Banking </b> hoặc ứng dụng camera hỗ trợ
                                                         QR code để quét mã</a>
                                                 </div>
-                                                <img class="vietqr" src="" width="100%" />
+                                                <?php
+
+                                                if (isset($getinvoices1)) {
+                                                    if ($getinvoices1 && $getinvoices1->num_rows > 0) {
+                                                        $i = 0;
+                                                        while ($resultsss = $getinvoices1->fetch_assoc()) {
+                                                            $requestData = [
+                                                                'accountNo' => 105879492155,
+                                                                'accountName' => 'TRAN LE HOANG GIANG',
+                                                                'acqId' => 970415,
+                                                                'amount' => $resultsss['invoices_price'],
+                                                                'addInfo' => $resultsss['invoices_content'],
+                                                                'format' => 'text',
+                                                                'template' => 'compact'
+                                                            ];
+
+                                                            // URL API
+                                                            $apiUrl = 'https://api.vietqr.io/v2/generate';
+
+                                                            // Gửi yêu cầu POST bằng cURL
+                                                            $ch = curl_init($apiUrl);
+                                                            curl_setopt($ch, CURLOPT_POST, 1);
+                                                            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($requestData));
+                                                            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+                                                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                                                            $response = curl_exec($ch);
+                                                            curl_close($ch);
+
+                                                            if ($response) {
+                                                                $responseData = json_decode($response, true);
+
+                                                                // Kiểm tra mã code trong kết quả
+                                                                if ($responseData['code'] === '00') {
+                                                                    // Lấy đường dẫn ảnh QR code
+                                                                    $qrDataURL = $responseData['data']['qrDataURL'];
+
+                                                                    // Hiển thị ảnh QR code
+                                                                    echo '<img class="vietqr"   width="100%" src="' . $qrDataURL . '" alt="QR Code">';
+                                                                } else {
+                                                                    // Xử lý khi không thành công
+                                                                    echo 'Không thể tạo QR code.';
+                                                                }
+                                                            } else {
+                                                                // Xử lý khi có lỗi
+                                                                $error = error_get_last();
+                                                                echo 'Lỗi: ' . $error['message'];
+                                                            }
+                                                ?>
+
+                                                <?php
+                                                            $i++;
+                                                        }
+                                                    } else {
+                                                        ?>
+                                                <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                <?php
+                                                }
+                                                ?>
 
                                             </div>
                                         </div>
@@ -195,13 +295,13 @@
             </div>
         </div>
     </div>
-    <script src="https://clonesnew.com/public/faces/javax.faces.resource/adyen/js/tracking-version=1.2.js"></script>
+    <!-- <script src="https://clonesnew.com/public/faces/javax.faces.resource/adyen/js/tracking-version=1.2.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://clonesnew.com/public/faces/javax.faces.resource/adyen/js/tether.min.js"></script>
+    <!-- <script src="https://clonesnew.com/public/faces/javax.faces.resource/adyen/js/tether.min.js"></script>
     <script src="https://clonesnew.com/public/faces/javax.faces.resource/adyen/js/bootstrap.min.js"></script>
     <script src="https://clonesnew.com/public/faces/javax.faces.resource/adyen/js/m2.js"></script>
     <script type="text/javascript" src="https://clonesnew.com/public/faces/javax.faces.resource/js/momo.js"></script>
-    <script type="text/javascript" src="https://clonesnew.com/public/faces/javax.faces.resource/js/ws.js"></script>
+    <script type="text/javascript" src="https://clonesnew.com/public/faces/javax.faces.resource/js/ws.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script type="text/javascript">
     $(window).load(function() {
@@ -241,49 +341,51 @@
     }
 
     // Dữ liệu yêu cầu
-    var requestData = {
-        accountNo: 113366668888,
-        accountName: "QUY VAC XIN PHONG CHONG COVID",
-        acqId: 970415,
-        amount: 79000,
-        addInfo: "Ung Ho Quy Vac Xin",
-        format: "text",
-        template: "compact"
-    };
 
-    // URL API
-    var apiUrl = "https://api.vietqr.io/v2/generate";
+    // var requestData = {
+    //     accountNo: 113366668888,
+    //     accountName: "QUY VAC XIN PHONG CHONG COVID",
+    //     acqId: 970415,
+    //     amount: 79000,
+    //     addInfo: "Ung Ho Quy Vac Xin",
+    //     format: "text",
+    //     template: "compact"
+    // };
 
-    // Gửi yêu cầu POST bằng $.ajax
-    $.ajax({
-        url: apiUrl,
-        type: "POST",
-        data: JSON.stringify(requestData),
-        contentType: "application/json",
-        dataType: "json",
-        success: function(response) {
-            // Kiểm tra mã code trong kết quả
-            if (response.code === "00") {
-                // Lấy đường dẫn ảnh QR code
-                var qrDataURL = response.data.qrDataURL;
 
-                // Hiển thị ảnh QR code
-                // $("body").append('<img src="' + qrDataURL + '" alt="QR Code">');
+    // // URL API
+    // var apiUrl = "https://api.vietqr.io/v2/generate";
 
-                var vietqrImg = document.querySelector('.vietqr');
+    // // Gửi yêu cầu POST bằng $.ajax
+    // $.ajax({
+    //     url: apiUrl,
+    //     type: "POST",
+    //     data: JSON.stringify(requestData),
+    //     contentType: "application/json",
+    //     dataType: "json",
+    //     success: function(response) {
+    //         // Kiểm tra mã code trong kết quả
+    //         if (response.code === "00") {
+    //             // Lấy đường dẫn ảnh QR code
+    //             var qrDataURL = response.data.qrDataURL;
 
-                // Thiết lập đường dẫn ảnh cho thuộc tính src
-                vietqrImg.src = qrDataURL;
-            } else {
-                // Xử lý khi không thành công
-                console.log("Không thể tạo QR code.");
-            }
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // Xử lý khi có lỗi
-            console.log("Lỗi: " + errorThrown);
-        }
-    });
+    //             // Hiển thị ảnh QR code
+    //             // $("body").append('<img src="' + qrDataURL + '" alt="QR Code">');
+
+    //             var vietqrImg = document.querySelector('.vietqr');
+
+    //             // Thiết lập đường dẫn ảnh cho thuộc tính src
+    //             vietqrImg.src = qrDataURL;
+    //         } else {
+    //             // Xử lý khi không thành công
+    //             console.log("Không thể tạo QR code.");
+    //         }
+    //     },
+    //     error: function(jqXHR, textStatus, errorThrown) {
+    //         // Xử lý khi có lỗi
+    //         console.log("Lỗi: " + errorThrown);
+    //     }
+    // });
     </script>
 </body>
 
