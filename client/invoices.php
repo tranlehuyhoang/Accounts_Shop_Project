@@ -49,8 +49,8 @@ $show_invoices = $invoices->show_invoices_by_user();
                                                     // echo print_r($results)
                                         ?>
                                                     <tr>
-                                                        <td>0</td>
-                                                        <td><a href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>"><i class="fas fa-file-alt"></i>
+                                                        <td><?php echo $results['invoices_id'] ?></td>
+                                                        <td><a target="_blank" href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>"><i class="fas fa-file-alt"></i>
                                                                 <?php echo $results['invoices_content'] ?></a></td>
                                                         <td><b style="font-size:15px;">VTB</b></td>
                                                         <td><b style="color: red;"><?php echo number_format($results['invoices_price']) ?>đ</b>
@@ -75,7 +75,7 @@ $show_invoices = $invoices->show_invoices_by_user();
                                                         </td>
                                                         <td><?php echo $results['invoices_date'] ?></td>
                                                         <td>
-                                                            <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chi tiết hoá đơn" href="https://clonesnew.com/client/payment/UH1396">
+                                                            <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chi tiết hoá đơn" href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
                                                                     </path>

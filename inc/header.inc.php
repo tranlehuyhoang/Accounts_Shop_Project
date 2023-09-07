@@ -287,7 +287,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                             </a>
                         </li>
                         <li class="sidebar-layout">
-                            <a target='_blank' href="https://www.facebook.com/cuti292000mmo/" class="svg-icon ">
+                            <a target='_blank' href="https://www.facebook.com/trancoizxcv/" class="svg-icon ">
                                 <i class="fab fa-facebook"></i> <span class="ml-2">Liên Hệ Facebook</span>
                             </a>
                         </li>
@@ -413,7 +413,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                                             <li class="nav-item nav-icon dropdown">
                                                 <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <img src="https://clonesnew.com/public/datum/assets/images/user/1.jpg" class="img-fluid avatar-rounded" alt="user">
+                                                    <img src="../public/datum/assets/images/user/1.jpg" class="img-fluid avatar-rounded" alt="user">
                                                     <span class="mb-0 ml-2 user-name"><?php echo  $result['user_username'] ?></span>
 
                                                 </a>

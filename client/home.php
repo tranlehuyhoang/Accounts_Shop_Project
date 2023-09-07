@@ -38,7 +38,7 @@ $show_brand = $brand->show_brand();
                             </p>
 
                             <p style="text-align:center"><strong>Join group Zalo để thảo luận
-                                    nh&eacute;!&nbsp;</strong>:<span style="font-size:18px"><strong><a href="https://zalo.me/g/ikhucp184">Group ZALO</a></strong></span>
+                                    nh&eacute;!&nbsp;</strong>:<span style="font-size:18px"><strong><a href="https://zalo.me/g/gzojdf259">Group ZALO</a></strong></span>
                             </p>
 
                             <ul>
@@ -360,7 +360,7 @@ $show_brand = $brand->show_brand();
                                                                                             </span>
                                                                                         </td>
                                                                                         <td class="text-center d-none-600">
-                                                                                            <button class="btn btn-block btn-sm btn-primary" onclick="modalBuy(3, 1000,`<?php echo $results['brand_name']; ?>` )">
+                                                                                            <button class="btn btn-block btn-sm btn-primary" onclick="modalBuy(<?php echo $results['brand_id']; ?>, <?php echo $results['brand_price']; ?>,`<?php echo $results['brand_name']; ?>` )">
                                                                                                 <i class="fas fa-shopping-cart mr-1"></i>MUA
                                                                                                 NGAY </button>
                                                                                         </td>
@@ -473,33 +473,34 @@ $show_brand = $brand->show_brand();
                                     <i class="fas fa-window-close"></i>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                <div class="form-group mb-3">
-                                    <label>Tên sản phẩm:</label>
-                                    <input type="text" class="form-control" id="name" readonly />
+                            <form action="" method="post">
+                                <div class="modal-body">
+                                    <div class="form-group mb-3">
+                                        <label>Tên sản phẩm:</label>
+                                        <input type="text" class="form-control" id="name" readonly />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Số lượng cần mua:</label>
+                                        <input type="number" class="form-control form-control-solid" style="display: none;" id="price_product" />
+                                        <input type="number" class="form-control form-control-solid" placeholder="Nhập số lượng cần mua" id="amount" min="1" required onchange="totalPayment()" onkeyup="totalPayment()" />
+                                        <input type="hidden" value="" readonly class="form-control" id="modal-id">
+                                        <input type="hidden" value="" readonly class="form-control" id="price">
+                                        <input class="form-control" type="hidden" id="token" value="">
+                                    </div>
+                                    <div id="hotdeal"></div>
+                                    <div class="form-group mb-3" id="showDiscountCode">
+                                        <label>Mã giảm giá:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập mã giảm giá của bạn" id="coupon" />
+                                    </div>
+
+                                    <div class="mb-3 text-center" style="font-size: 20px;">Tổng tiền cần thanh toán:
+                                        <b id="total" style="color:red;">0</b>
+                                    </div>
+                                    <div class="text-center mb-3">
+                                        <button type="submit" id="btnBuy" onclick="" class="btn btn-primary btn-block"><i class="fas fa-credit-card mr-1"></i>Thanh toán</span></button>
+                                    </div>
                                 </div>
-                                <div class="form-group mb-3">
-                                    <label>Số lượng cần mua:</label>
-                                    <!-- <input type="number" class="form-control form-control-solid" onchange="totalPayment()" onkeyup="totalPayment()" placeholder="Nhập số lượng cần mua" id="amount" /> -->
-                                    <input type="number" class="form-control form-control-solid" placeholder="Nhập số lượng cần mua" id="amount" />
-                                    <input type="hidden" value="" readonly class="form-control" id="modal-id">
-                                    <input type="hidden" value="" readonly class="form-control" id="price">
-                                    <input class="form-control" type="hidden" id="token" value="">
-                                </div>
-                                <div id="hotdeal"></div>
-                                <div class="form-group mb-3" id="showDiscountCode">
-                                    <label>Mã giảm giá:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập mã giảm giá của bạn" id="coupon" />
-                                </div>
-                                <div class="mb-3 text-right"><button id="btnshowDiscountCode" onclick="showDiscountCode()" class="btn btn-danger btn-sm">Nhập mã giảm
-                                        giá</button></div>
-                                <div class="mb-3 text-center" style="font-size: 20px;">Tổng tiền cần thanh toán:
-                                    <b id="total" style="color:red;">0</b>
-                                </div>
-                                <div class="text-center mb-3">
-                                    <button type="submit" id="btnBuy" onclick="" class="btn btn-primary btn-block"><i class="fas fa-credit-card mr-1"></i>Thanh toán</span></button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -560,7 +561,7 @@ $show_brand = $brand->show_brand();
                         $("#price").val(price);
                         $("#name").val(name);
                         $("#total").html(0);
-                        $("#amount").val('');
+
                         $("#modalBuy").modal();
                         $("#hotdeal").html('');
                         // $.get("../ajaxs/client/loadForm.php?id=" + id + '&type=loadHotDeal', function(data) {
@@ -586,28 +587,13 @@ $show_brand = $brand->show_brand();
 
                     function totalPayment() {
                         $('#total').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...');
-                        $.ajax({
-                            url: "../ajaxs/client/totalPayment.php",
-                            method: "POST",
-                            data: {
-                                id: $("#modal-id").val(),
-                                amount: $("#amount").val(),
-                                coupon: $("#coupon").val(),
-                                token: $("#token").val(),
-                                store: 'accounts'
-                            },
-                            success: function(data) {
-                                $("#total").html(data);
-                            },
-                            error: function() {
-                                cuteToast({
-                                    type: "error",
-                                    message: 'Không thể tính kết quả thanh toán',
-                                    timer: 5000
-                                });
-                            }
-                        });
-                        //$("#total").html(total.toString().replace(/(.)(?=(\d{3})+$)/g, '$1,'));
+
+                        var price = parseFloat($("#price").val()); // Lấy giá trị từ phần tử có id "price"
+                        var amount = parseFloat($("#amount").val()); // Lấy giá trị từ phần tử có id "amount"
+                        var total = price * amount; // Tính tổng
+
+                        $("#total").html(total.toString().replace(/(.)(?=(\d{3})+$)/g, '$1,') +
+                            "đ"); // Gán giá trị vào phần tử có id "total" và thêm ký tự "đ"
                     }
                 </script>
             </div>

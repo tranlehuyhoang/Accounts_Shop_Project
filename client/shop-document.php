@@ -38,7 +38,7 @@ include_once '../inc/header.inc.php';
                             </p>
 
                             <p style="text-align:center"><strong>Join group Zalo để thảo luận
-                                    nh&eacute;!&nbsp;</strong>:<span style="font-size:18px"><strong><a href="https://zalo.me/g/ikhucp184">Group ZALO</a></strong></span>
+                                    nh&eacute;!&nbsp;</strong>:<span style="font-size:18px"><strong><a href="https://zalo.me/g/gzojdf259">Group ZALO</a></strong></span>
                             </p>
 
                             <ul>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 06, 2023 at 07:06 PM
+-- Generation Time: Sep 07, 2023 at 02:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -99,7 +99,10 @@ INSERT INTO `clone_invoices` (`invoices_id`, `invoices_price`, `invoices_content
 (10, 12000, '3FCTQR', 0, 6, '2023-09-06 15:14:05'),
 (11, 15000, '94H6BB', 0, 6, '2023-09-06 15:27:47'),
 (12, 123123, '1RLFD8', 0, 5, '2023-09-06 16:27:55'),
-(13, 34234234, 'BCUBVA', 0, 5, '2023-09-06 16:28:54');
+(13, 34234234, 'BCUBVA', 0, 5, '2023-09-06 16:28:54'),
+(14, 10000, '0B6OVQ', 0, 0, '2023-09-06 23:30:27'),
+(15, 10000, 'ZRKWNV', 0, 6, '2023-09-06 23:37:09'),
+(16, 100000, 'CHRZJL', 1, 6, '2023-09-07 00:51:57');
 
 -- --------------------------------------------------------
 
@@ -150,7 +153,7 @@ INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_ema
 (3, '2', 'c81e728d9d4c2f636f067f89cc14862c', '1@1', 0, '2023-09-06 08:26:15'),
 (4, '123', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:29:22'),
 (5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 0, '2023-09-06 08:33:55'),
-(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 852000, '2023-09-06 09:43:07');
+(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 952000, '2023-09-06 09:43:07');
 
 --
 -- Indexes for dumped tables
@@ -206,7 +209,7 @@ ALTER TABLE `clone_category`
 -- AUTO_INCREMENT for table `clone_invoices`
 --
 ALTER TABLE `clone_invoices`
-  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `clone_product`
