@@ -59,6 +59,17 @@ class invoices
 
         return $result;
     }
+    public function show_invoices_by_user()
+    {
+        $invoices_user = $_SESSION['clone_user_id'];
+        $query = "SELECT * FROM clone_invoices 
+        JOIN clone_user ON clone_invoices.invoices_user = clone_user.user_id
+        where invoices_user = '$invoices_user'
+        ";
+        $result = $this->db->select($query);
+
+        return $result;
+    }
 
 
     public function update_invoices($content, $user, $price)

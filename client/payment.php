@@ -23,7 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
     }
 }
 
-
+if (!isset($_SESSION['clone_user_id'])) {
+    echo "<script>location.href = '../client/login.php';</script>";
+}
 ?>
 
 
@@ -32,13 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
 <head id="j_idt2">
 </head>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!-- CMSNT.CO | Version 6.2.7 -->
+<!-- PS26819 | Version 6.2.7 -->
 
 <head id="CMSNTCO">
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <title>Thanh toán hoá đơn</title>
-    <meta name="description" content="Cổng thanh toán CMSNT.CO" />
+    <meta name="description" content="Cổng thanh toán PS26819" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="all,follow" />
@@ -101,9 +103,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
                 <div class="navbar-header" style="position: relative">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-right" style="padding-right: 0px;">
                         <img src="https://clonesnew.com/public/faces/javax.faces.resource/images/hotline.svg" alt="logo-security" width="35" />
-                        <span>0355275555</span>
+                        <span>0337799453</span>
                         <img src="https://clonesnew.com/public/faces/javax.faces.resource/images/email.svg" alt="logo-security" width="35" />
-                        <a href="mailto:cuti29200029@gmail.com"><span>cuti29200029@gmail.com</span></a>
+                        <a href="mailto:2509roblox@gmail.com"><span>2509roblox@gmail.com</span></a>
                     </div>
                 </div>
             </div>
@@ -298,7 +300,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
                             <br />
                             Vui lòng thanh toán vào thông tin tài khoản trên để hệ thống xử lý hoá đơn tự động.
                         </p>
-                        <a href="https://clonesnew.com/client/invoices">
+                        <a href="../client/invoices.php">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
                             <span>Quay Lại</span></a>
                     </div>

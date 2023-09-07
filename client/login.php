@@ -13,6 +13,7 @@ if (isset($_SESSION['clone_user_id'])) {
     echo $_SESSION['clone_user_id'];
     # code...
 }
+
 ?>
 <!doctype html>
 <html>
@@ -22,20 +23,20 @@ if (isset($_SESSION['clone_user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Đăng Nhập | CLONESNEW.SITE</title>
     <link rel="canonical" href="https://clonesnew.com/client/home" />
-    <meta name="description" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng " />
-    <meta name="keywords" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
-    <meta name="copyright" content="CMSNT.CO - THIẾT KẾ WEBSITE MMO" />
+    <meta name="description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng " />
+    <meta name="keywords" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
+    <meta name="copyright" content="PS26819 - THIẾT KẾ WEBSITE MMO" />
     <meta name="author" content=" Hòa Nguyễn" />
     <!-- Open Graph data -->
     <meta property="og:title" content="CLONESNEW.SITE">
     <meta property="og:type" content="Website">
     <meta property="og:url" content="http://localhost/">
-    <meta property="og:image:alt" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
+    <meta property="og:image:alt" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <meta property="og:image" content="../assets/storage/images/image_8OK.png">
-    <meta property="og:description" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
+    <meta property="og:description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <meta property="og:site_name" content="CLONESNEW.SITE">
-    <meta property="article:section" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
-    <meta property="article:tag" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
+    <meta property="article:section" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
+    <meta property="article:tag" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <!-- Favicon -->
 
     <link rel="shortcut icon" href="../assets/storage/images/favicon_V01.ico" type="image/x-icon">
@@ -98,7 +99,7 @@ if (isset($_SESSION['clone_user_id'])) {
         }
     </style>
 </head>
-<!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+<!-- Dev By PS26819 | FB.COM/PS26819 | ZALO.ME/0947838128 | MMO Solution -->
 <style>
     .bg-image {
         background-position: 0 50%;

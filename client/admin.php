@@ -42,20 +42,20 @@ $show_invoices = $invoices->show_invoices();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CLONESNEW.SITE</title>
     <link rel="canonical" href="../client/home" />
-    <meta name="description" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng " />
-    <meta name="keywords" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
-    <meta name="copyright" content="CMSNT.CO - THIẾT KẾ WEBSITE MMO" />
+    <meta name="description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng " />
+    <meta name="keywords" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
+    <meta name="copyright" content="PS26819 - THIẾT KẾ WEBSITE MMO" />
     <meta name="author" content=" Hòa Nguyễn" />
     <!-- Open Graph data -->
     <meta property="og:title" content="CLONESNEW.SITE">
     <meta property="og:type" content="Website">
     <meta property="og:url" content="http://localhost/">
-    <meta property="og:image:alt" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
+    <meta property="og:image:alt" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <meta property="og:image" content="../assets/storage/images/image_8OK.png">
-    <meta property="og:description" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
+    <meta property="og:description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <meta property="og:site_name" content="CLONESNEW.SITE">
-    <meta property="article:section" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
-    <meta property="article:tag" content="Liên Hệ Support : 0355275555 Uy Tín - Chất Lượng ">
+    <meta property="article:section" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
+    <meta property="article:tag" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <!-- Favicon -->
 
     <link rel="shortcut icon" href="../assets/storage/images/favicon_V01.ico" type="image/x-icon">
@@ -67,9 +67,7 @@ $show_invoices = $invoices->show_invoices();
     <link rel="stylesheet" href="../resources/css/customize.css">
     <script src="../resources/js/jquery.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- sweetalert2-->
     <link class="main-stylesheet" href="../public/sweetalert2/default.css" rel="stylesheet" type="text/css">
     <script src="../public/sweetalert2/sweetalert2.js"></script>
@@ -81,21 +79,49 @@ $show_invoices = $invoices->show_invoices();
     <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
 
-    .card-product {
-        color: white;
-        background-image: linear-gradient(to right, #060606, #060606, #060606);
-    }
+        .card-product {
+            color: white;
+            background-image: linear-gradient(to right, #060606, #060606, #060606);
+        }
 
-    #loading-center {
-        background: url(../assets/storage/images/gif_loaderPZV.png) no-repeat scroll 50%;
-        background-size: 20%;
-        width: 100%;
-        height: 100%;
-        position: relative;
+        #loading-center {
+            background: url(../assets/storage/images/gif_loaderPZV.png) no-repeat scroll 50%;
+            background-size: 20%;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .change-mode .custom-switch.custom-switch-icon label.custom-control-label:after {
+            top: 0;
+            left: 0;
+            width: 35px;
+            height: 30px;
+            border-radius: 5px 0 0 5px;
+            background-color: #060606;
+            border-color: #060606;
+            z-index: 0;
+        }
+    </style>
+    <!-- Script Header -->
+    <style>
+        .iq-sidebar-menu .side-menu li a {
+            color: #f1f1f1;
+        }
+
+        .text-uppercase {
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<!-- Dev By PS26819 | FB.COM/PS26819 | ZALO.ME/0947838128 | MMO Solution -->
+<style>
+    .iq-sidebar {
+        background: linear-gradient(#060606, #060606, #060606);
     }
 
     .change-mode .custom-switch.custom-switch-icon label.custom-control-label:after {
@@ -108,34 +134,6 @@ $show_invoices = $invoices->show_invoices();
         border-color: #060606;
         z-index: 0;
     }
-    </style>
-    <!-- Script Header -->
-    <style>
-    .iq-sidebar-menu .side-menu li a {
-        color: #f1f1f1;
-    }
-
-    .text-uppercase {
-        color: #f1f1f1;
-    }
-    </style>
-</head>
-<!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
-<style>
-.iq-sidebar {
-    background: linear-gradient(#060606, #060606, #060606);
-}
-
-.change-mode .custom-switch.custom-switch-icon label.custom-control-label:after {
-    top: 0;
-    left: 0;
-    width: 35px;
-    height: 30px;
-    border-radius: 5px 0 0 5px;
-    background-color: #060606;
-    border-color: #060606;
-    z-index: 0;
-}
 </style>
 
 <body class="color-light ">
@@ -152,70 +150,70 @@ $show_invoices = $invoices->show_invoices();
 
 
         <script>
-        function changeLanguage(id) {
-            $.ajax({
-                url: "../ajaxs/client/changeLanguage.php",
-                method: "POST",
-                dataType: "JSON",
-                data: {
-                    id: id
-                },
-                success: function(respone) {
-                    if (respone.status == 'success') {
-                        cuteToast({
-                            type: "success",
-                            message: respone.msg,
-                            timer: 5000
-                        });
-                        location.reload();
-                    } else {
-                        cuteAlert({
-                            type: "error",
-                            title: "Error",
-                            message: respone.msg,
-                            buttonText: "Okay"
-                        });
+            function changeLanguage(id) {
+                $.ajax({
+                    url: "../ajaxs/client/changeLanguage.php",
+                    method: "POST",
+                    dataType: "JSON",
+                    data: {
+                        id: id
+                    },
+                    success: function(respone) {
+                        if (respone.status == 'success') {
+                            cuteToast({
+                                type: "success",
+                                message: respone.msg,
+                                timer: 5000
+                            });
+                            location.reload();
+                        } else {
+                            cuteAlert({
+                                type: "error",
+                                title: "Error",
+                                message: respone.msg,
+                                buttonText: "Okay"
+                            });
+                        }
+                    },
+                    error: function() {
+                        alert(html(response));
+                        history.back();
                     }
-                },
-                error: function() {
-                    alert(html(response));
-                    history.back();
-                }
-            });
-        }
+                });
+            }
         </script>
         <script>
-        function changeCurrency(id) {
-            $.ajax({
-                url: "../ajaxs/client/changeCurrency.php",
-                method: "POST",
-                dataType: "JSON",
-                data: {
-                    id: id
-                },
-                success: function(respone) {
-                    if (respone.status == 'success') {
-                        cuteToast({
-                            type: "success",
-                            message: respone.msg,
-                            timer: 5000
-                        });
-                        location.reload();
-                    } else {
-                        cuteAlert({
-                            type: "error",
-                            title: "Error",
-                            message: respone.msg,
-                            buttonText: "Okay"
-                        });
+            function changeCurrency(id) {
+                $.ajax({
+                    url: "../ajaxs/client/changeCurrency.php",
+                    method: "POST",
+                    dataType: "JSON",
+                    data: {
+                        id: id
+                    },
+                    success: function(respone) {
+                        if (respone.status == 'success') {
+                            cuteToast({
+                                type: "success",
+                                message: respone.msg,
+                                timer: 5000
+                            });
+                            location.reload();
+                        } else {
+                            cuteAlert({
+                                type: "error",
+                                title: "Error",
+                                message: respone.msg,
+                                buttonText: "Okay"
+                            });
+                        }
+                    },
+                    error: function() {
+                        alert(html(response));
+                        history.back();
                     }
-                },
-                error: function() {
-                    alert(html(response));
-                    history.back();
-                }
-            });
-        }
+                });
+            }
         </script>
         <div style="">
             <div class="">
@@ -255,52 +253,44 @@ $show_invoices = $invoices->show_invoices();
                                                             // echo print_r($results)
                                                 ?>
 
-                                                <tr>
-                                                    <td><?php echo $results['invoices_id'] ?></td>
-                                                    <td><a
-                                                            href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>"><i
-                                                                class="fas fa-file-alt"></i>
-                                                            <?php echo $results['invoices_content'] ?></a></td>
-                                                    <td><b style="font-size:15px;">VTB</b></td>
-                                                    <td><b
-                                                            style="color: red;"><?php echo number_format($results['invoices_price']) ?>đ</b>
-                                                    </td>
-                                                    <td><b
-                                                            style="color: green;"><?php echo number_format($results['invoices_price']) ?>đ</b>
-                                                    </td>
-                                                    <td>
-                                                        <?php
+                                                            <tr>
+                                                                <td><?php echo $results['invoices_id'] ?></td>
+                                                                <td><a href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>"><i class="fas fa-file-alt"></i>
+                                                                        <?php echo $results['invoices_content'] ?></a></td>
+                                                                <td><b style="font-size:15px;">VTB</b></td>
+                                                                <td><b style="color: red;"><?php echo number_format($results['invoices_price']) ?>đ</b>
+                                                                </td>
+                                                                <td><b style="color: green;"><?php echo number_format($results['invoices_price']) ?>đ</b>
+                                                                </td>
+                                                                <td>
+                                                                    <?php
                                                                     if ($results['invoices_status'] == '0') {
                                                                     ?>
-                                                        <p
-                                                            class="mb-0 text-warning font-weight-bold d-flex justify-content-start align-items-center">
-                                                            Đang chờ thanh toán</p>
-                                                        <?php
+                                                                        <p class="mb-0 text-warning font-weight-bold d-flex justify-content-start align-items-center">
+                                                                            Đang chờ thanh toán</p>
+                                                                    <?php
                                                                     } else {
                                                                     ?>
-                                                        <p
-                                                            class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
-                                                            Đã thanh toán</p>
-                                                        <?php
+                                                                        <p class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
+                                                                            Đã thanh toán</p>
+                                                                    <?php
                                                                     }
                                                                     ?>
 
-                                                    </td>
-                                                    <td><?php echo $results['user_username'] ?></td>
-                                                    <td><?php echo $results['invoices_date'] ?></td>
-                                                    <td><a onclick="return confirm('Xác nhận cập nhật')"
-                                                            href="../client/admin.php?bill=<?php echo $results['invoices_content'] ?>&user=<?php echo $results['invoices_user'] ?>&price=<?php echo $results['invoices_price'] ?>"
-                                                            class="btn btn-primary btn-sm">Xác nhận</a>
+                                                                </td>
+                                                                <td><?php echo $results['user_username'] ?></td>
+                                                                <td><?php echo $results['invoices_date'] ?></td>
+                                                                <td><a onclick="return confirm('Xác nhận cập nhật')" href="../client/admin.php?bill=<?php echo $results['invoices_content'] ?>&user=<?php echo $results['invoices_user'] ?>&price=<?php echo $results['invoices_price'] ?>" class="btn btn-primary btn-sm">Xác nhận</a>
 
-                                                    </td>
-                                                </tr>
+                                                                </td>
+                                                            </tr>
 
-                                                <?php
+                                                        <?php
                                                             $i++;
                                                         }
                                                     } else {
                                                         ?>
-                                                <?php
+                                                    <?php
                                                     }
                                                 } else {
                                                     ?>
@@ -361,7 +351,7 @@ $show_invoices = $invoices->show_invoices();
     <script src="../public/datum/assets/js/app.js"></script>
 
 
-    <!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+    <!-- Dev By PS26819 | FB.COM/PS26819 | ZALO.ME/0947838128 | MMO Solution -->
     <!-- Script Footer -->
 </body>
 

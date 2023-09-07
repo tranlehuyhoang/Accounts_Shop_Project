@@ -19,7 +19,7 @@ include_once '../inc/header.inc.php';
                             <p><strong>Nếu nhập sai nội dung sẽ bị trừ&nbsp;10% gi&aacute; trị nạp</strong></p>
 
                             <p><strong>Nếu hệ thống kh&ocirc;ng cộng tiền sau 10p h&atilde;y li&ecirc;n hệ
-                                    Zalo:&nbsp;0866720209 hoặc call 0355275555</strong></p>
+                                    Zalo:&nbsp;0337799453 hoặc call 0337799453</strong></p>
                         </div>
                     </div>
                 </div>
@@ -87,6 +87,10 @@ include_once '../inc/header.inc.php';
                     </script>
                 <?php
                 } else {
+                    if (!isset($_SESSION['clone_user_id'])) {
+                        echo "<script>location.href = '../client/login.php';</script>";
+                        return;
+                    }
                 ?>
                     <script type="text/javascript">
                         $('#btnDepositOrder').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...').prop(
@@ -173,9 +177,9 @@ include_once '../inc/header.inc.php';
         <div class="row">
             <div class="col-lg-6">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a href="https://clonesnew.com/client/privacy-policy">Chính sách
+                    <li class="list-inline-item"><a>Chính sách
                             bảo mật</a></li>
-                    <li class="list-inline-item"><a href="https://clonesnew.com/client/terms">Điều khoản sử dụng</a>
+                    <li class="list-inline-item"><a>Điều khoản sử dụng</a>
                     </li>
                 </ul>
             </div>
@@ -183,9 +187,9 @@ include_once '../inc/header.inc.php';
                 <span class="mr-1">
                     <!-- Copyright                    <script>
                     document.write(new Date().getFullYear())
-                    </script>© <a href="#" class="">CLONESNEW.COM</a>
+                    </script>© <a href="#" class="">CLONESNEW.SITE</a>
                     All Rights Reserved |  -->
-                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank" href="https://www.cmsnt.co/?ref=https://clonesnew.com/">CMSNT.CO</a>
+                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank" href="../client/home.php">PS26819</a>
                 </span>
             </div>
         </div>
@@ -201,7 +205,7 @@ include_once '../inc/header.inc.php';
 
 
 
-<!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+<!-- Dev By PS26819 | FB.COM/PS26819 | ZALO.ME/0947838128 | MMO Solution -->
 <!-- Script Footer -->
 </body>
 

@@ -1,5 +1,7 @@
 <?php
 include_once '../inc/header.inc.php';
+
+$show_invoices = $invoices->show_invoices_by_user();
 ?>
 <div style="padding-top:90px">
     <div class="content-page">
@@ -37,353 +39,84 @@ include_once '../inc/header.inc.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>0</td>
-                                            <td><a href="https://clonesnew.com/client/payment/UH1396"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    UH1396</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">10.000đ</b></td>
-                                            <td><b style="color: green;">10.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-warning font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Đang chờ thanh toán</p>
-                                            </td>
-                                            <td>2023-09-06 10:00:22</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/UH1396">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td><a href="https://clonesnew.com/client/payment/NF7231"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    NF7231</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">200.000đ</b></td>
-                                            <td><b style="color: green;">200.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-danger font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Huỷ bỏ</p>
-                                            </td>
-                                            <td>2023-05-03 09:14:26</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/NF7231">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td><a href="https://clonesnew.com/client/payment/KX8143"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    KX8143</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">20.000đ</b></td>
-                                            <td><b style="color: green;">20.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-danger font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Huỷ bỏ</p>
-                                            </td>
-                                            <td>2023-05-03 09:09:56</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/KX8143">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td><a href="https://clonesnew.com/client/payment/PG7391"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    PG7391</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">3.333.333đ</b></td>
-                                            <td><b style="color: green;">3.333.333đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-danger font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Huỷ bỏ</p>
-                                            </td>
-                                            <td>2023-04-22 10:51:16</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/PG7391">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td><a href="https://clonesnew.com/client/payment/OU5672"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    OU5672</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">1.000.000đ</b></td>
-                                            <td><b style="color: green;">1.000.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-danger font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Huỷ bỏ</p>
-                                            </td>
-                                            <td>2023-04-21 19:57:31</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/OU5672">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td><a href="https://clonesnew.com/client/payment/ID6498"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    ID6498</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">1.000.000đ</b></td>
-                                            <td><b style="color: green;">1.000.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-danger font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Huỷ bỏ</p>
-                                            </td>
-                                            <td>2023-04-21 19:50:17</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/ID6498">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td><a href="https://clonesnew.com/client/payment/ZR3597"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    ZR3597</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">10.000đ</b></td>
-                                            <td><b style="color: green;">10.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-danger font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Huỷ bỏ</p>
-                                            </td>
-                                            <td>2023-04-20 21:49:19</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/ZR3597">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td><a href="https://clonesnew.com/client/payment/GJ4192"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    GJ4192</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">10.000đ</b></td>
-                                            <td><b style="color: green;">10.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-danger font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Huỷ bỏ</p>
-                                            </td>
-                                            <td>2023-04-20 21:37:53</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/GJ4192">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>8</td>
-                                            <td><a href="https://clonesnew.com/client/payment/97624381"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    97624381</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">25.000đ</b></td>
-                                            <td><b style="color: green;">25.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Đã thanh toán</p>
-                                            </td>
-                                            <td>2023-03-17 12:40:11</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/97624381">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>9</td>
-                                            <td><a href="https://clonesnew.com/client/payment/NT489521"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    NT489521</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
-                                            <td><b style="color: red;">30.000đ</b></td>
-                                            <td><b style="color: green;">30.000đ</b></td>
-                                            <td>
-                                                <p
-                                                    class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Đã thanh toán</p>
-                                            </td>
-                                            <td>2023-03-13 23:11:57</td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/NT489521">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
+
+                                        <?php
+
+                                        if (isset($show_invoices)) {
+                                            if ($show_invoices && $show_invoices->num_rows > 0) {
+                                                $i = 0;
+                                                while ($results = $show_invoices->fetch_assoc()) {
+                                                    // echo print_r($results)
+                                        ?>
+                                                    <tr>
+                                                        <td>0</td>
+                                                        <td><a href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>"><i class="fas fa-file-alt"></i>
+                                                                <?php echo $results['invoices_content'] ?></a></td>
+                                                        <td><b style="font-size:15px;">VTB</b></td>
+                                                        <td><b style="color: red;"><?php echo number_format($results['invoices_price']) ?>đ</b>
+                                                        </td>
+                                                        <td><b style="color: green;"><?php echo number_format($results['invoices_price']) ?>đ</b>
+                                                        </td>
+                                                        <td>
+                                                            <?php
+                                                            if ($results['invoices_status'] == '0') {
+                                                            ?>
+                                                                <p class="mb-0 text-warning font-weight-bold d-flex justify-content-start align-items-center">
+                                                                    Đang chờ thanh toán</p>
+                                                            <?php
+                                                            } else {
+                                                            ?>
+                                                                <p class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
+                                                                    Đã thanh toán</p>
+                                                            <?php
+                                                            }
+                                                            ?>
+
+                                                        </td>
+                                                        <td><?php echo $results['invoices_date'] ?></td>
+                                                        <td>
+                                                            <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chi tiết hoá đơn" href="https://clonesnew.com/client/payment/UH1396">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
+                                                                    </path>
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                                                    </path>
+                                                                </svg>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    $i++;
+                                                }
+                                            } else {
+                                                ?>
+                                            <?php
+                                            }
+                                        } else {
+                                            ?>
+                                        <?php
+                                        }
+                                        ?>
+
+
                                         <tr>
                                             <td>10</td>
-                                            <td><a href="https://clonesnew.com/client/payment/NT386019"><i
-                                                        class="fas fa-file-alt"></i>
+                                            <td><a href="https://clonesnew.com/client/payment/NT386019"><i class="fas fa-file-alt"></i>
                                                     NT386019</a></td>
-                                            <td><b style="font-size:15px;">ACB</b></td>
+                                            <td><b style="font-size:15px;">VTB</b></td>
                                             <td><b style="color: red;">25.000đ</b></td>
                                             <td><b style="color: green;">25.000đ</b></td>
                                             <td>
-                                                <p
-                                                    class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
+                                                <p class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
                                                     Đã thanh toán</p>
                                             </td>
                                             <td>2023-03-13 22:33:49</td>
                                             <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="https://clonesnew.com/client/payment/NT386019">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
+                                                <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chi tiết hoá đơn" href="https://clonesnew.com/client/payment/NT386019">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
                                                         </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
                                                         </path>
                                                     </svg>
                                                 </a>
@@ -412,9 +145,9 @@ include_once '../inc/header.inc.php';
         <div class="row">
             <div class="col-lg-6">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a href="https://clonesnew.com/client/privacy-policy">Chính sách
+                    <li class="list-inline-item"><a>Chính sách
                             bảo mật</a></li>
-                    <li class="list-inline-item"><a href="https://clonesnew.com/client/terms">Điều khoản sử dụng</a>
+                    <li class="list-inline-item"><a>Điều khoản sử dụng</a>
                     </li>
                 </ul>
             </div>
@@ -422,10 +155,9 @@ include_once '../inc/header.inc.php';
                 <span class="mr-1">
                     <!-- Copyright                    <script>
                     document.write(new Date().getFullYear())
-                    </script>© <a href="#" class="">CLONESNEW.COM</a>
+                    </script>© <a href="#" class="">CLONESNEW.SITE</a>
                     All Rights Reserved |  -->
-                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank"
-                        href="https://www.cmsnt.co/?ref=https://clonesnew.com/">CMSNT.CO</a>
+                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank" href="../client/home.php">PS26819</a>
                 </span>
             </div>
         </div>
@@ -464,7 +196,7 @@ include_once '../inc/header.inc.php';
 <script src="../public/datum/assets/js/app.js"></script>
 
 
-<!-- Dev By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+<!-- Dev By PS26819 | FB.COM/PS26819 | ZALO.ME/0947838128 | MMO Solution -->
 <!-- Script Footer -->
 </body>
 
