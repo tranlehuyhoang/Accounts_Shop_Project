@@ -59,7 +59,7 @@ class user
 
         return $result;
     }
-    
+
 
 
     public function update_user($data, $id)
@@ -136,7 +136,8 @@ class user
             if ($result && $result->num_rows > 0) {
                 while ($resultss = $result->fetch_assoc()) {
                     $_SESSION['clone_user_id'] = $resultss['user_id'];
-                    header('Location:../client/home.php');
+                    $alertss = "200";
+                    return $alertss;
                 }
             }
             $alertss = "200";

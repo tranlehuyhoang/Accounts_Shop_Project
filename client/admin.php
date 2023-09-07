@@ -45,7 +45,7 @@ $show_invoices = $invoices->show_invoices();
     <meta name="description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng " />
     <meta name="keywords" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <meta name="copyright" content="PS26819 - THIẾT KẾ WEBSITE MMO" />
-    <meta name="author" content=" Hòa Nguyễn" />
+    <meta name="author" content=" Huy Hoàng" />
     <!-- Open Graph data -->
     <meta property="og:title" content="CLONESNEW.SITE">
     <meta property="og:type" content="Website">

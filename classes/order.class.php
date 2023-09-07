@@ -28,6 +28,7 @@ class order
         $result = $this->db->insert($query);
         if ($result) {
             $this->update_user($order_user, $order_price * $order_amout);
+            $this->update_product($order_brand, $order_code, $order_amout);
             $arlet = "200";
             return $arlet;
         } else {
@@ -36,6 +37,13 @@ class order
         }
     }
 
+    public function update_product($order_brand, $order_code, $order_amout)
+    {
+        for ($i = 0; $i < $order_amout; $i++) {
+            $query = "UPDATE clone_product SET product_order = '$order_code', product_selled = '1', product_brand = '$order_brand' WHERE product_order = '0' LIMIT 1";
+            $result = $this->db->update($query);
+        }
+    }
     public function update_user($user, $price)
     {
 

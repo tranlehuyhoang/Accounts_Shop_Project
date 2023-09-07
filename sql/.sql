@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 07, 2023 at 06:37 AM
+-- Generation Time: Sep 07, 2023 at 07:13 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -93,18 +93,19 @@ INSERT INTO `clone_invoices` (`invoices_id`, `invoices_price`, `invoices_content
 (4, 15000, 'KSIG4N', 1, 6, '2023-09-06 14:58:33'),
 (5, 110000, 'W1XW31', 1, 6, '2023-09-06 14:58:51'),
 (6, 12000, 'SB7TCN', 1, 6, '2023-09-06 15:09:37'),
-(7, 12000, 'XNT4JK', 0, 6, '2023-09-06 15:10:34'),
-(8, 12000, 'EFY587', 0, 6, '2023-09-06 15:10:43'),
+(7, 12000, 'XNT4JK', 1, 6, '2023-09-06 15:10:34'),
+(8, 12000, 'EFY587', 1, 6, '2023-09-06 15:10:43'),
 (9, 1500000, '22LYU6', 1, 6, '2023-09-06 15:13:09'),
 (10, 12000, '3FCTQR', 0, 6, '2023-09-06 15:14:05'),
 (11, 15000, '94H6BB', 0, 6, '2023-09-06 15:27:47'),
 (12, 123123, '1RLFD8', 0, 5, '2023-09-06 16:27:55'),
-(13, 34234234, 'BCUBVA', 0, 5, '2023-09-06 16:28:54'),
+(13, 34234234, 'BCUBVA', 1, 5, '2023-09-06 16:28:54'),
 (14, 10000, '0B6OVQ', 0, 0, '2023-09-06 23:30:27'),
-(15, 10000, 'ZRKWNV', 0, 6, '2023-09-06 23:37:09'),
+(15, 10000, 'ZRKWNV', 1, 6, '2023-09-06 23:37:09'),
 (16, 100000, 'CHRZJL', 1, 6, '2023-09-07 00:51:57'),
 (17, 10000, 'H9C7D0', 1, 6, '2023-09-07 02:28:50'),
-(18, 20000, '4I0430', 1, 6, '2023-09-07 04:36:30');
+(18, 20000, '4I0430', 1, 6, '2023-09-07 04:36:30'),
+(19, 10000, 'ZSY2Q1', 0, 6, '2023-09-07 04:46:14');
 
 -- --------------------------------------------------------
 
@@ -143,7 +144,13 @@ INSERT INTO `clone_order` (`order_id`, `order_user`, `order_data`, `order_price`
 (18, 6, '', 5000, 2, 4, 'CZRY6759345610', '2023-09-07 04:32:45'),
 (19, 6, '', 5000, 2, 4, 'DNAO8575130035', '2023-09-07 04:34:41'),
 (20, 6, '', 5000, 2, 4, 'IBQQ2050565956', '2023-09-07 04:35:01'),
-(21, 6, '', 5000, 2, 4, 'TSWD5337825424', '2023-09-07 04:36:03');
+(21, 6, '', 5000, 2, 4, 'TSWD5337825424', '2023-09-07 04:36:03'),
+(22, 6, '', 5000, 2, 1, 'KNIJ9691119398', '2023-09-07 04:43:19'),
+(23, 6, '', 5000, 2, 3, 'FQWK0322943359', '2023-09-07 05:08:11'),
+(24, 6, '', 5000, 2, 2, 'LBSG7450292891', '2023-09-07 05:09:34'),
+(25, 6, '', 5000, 2, 1, 'EQEK1735349794', '2023-09-07 05:10:50'),
+(26, 6, '', 5000, 2, 1, 'KQPG3397414213', '2023-09-07 05:12:08'),
+(27, 6, '', 5000, 2, 1, 'WBZF1121829505', '2023-09-07 05:12:51');
 
 -- --------------------------------------------------------
 
@@ -156,7 +163,7 @@ CREATE TABLE `clone_product` (
   `product_data` varchar(225) NOT NULL,
   `product_selled` int(225) NOT NULL,
   `product_brand` int(225) NOT NULL,
-  `product_order` int(11) NOT NULL,
+  `product_order` varchar(255) NOT NULL,
   `product_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -165,10 +172,10 @@ CREATE TABLE `clone_product` (
 --
 
 INSERT INTO `clone_product` (`product_id`, `product_data`, `product_selled`, `product_brand`, `product_order`, `product_date`) VALUES
-(1, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24'),
-(2, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24'),
-(3, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24'),
-(4, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24');
+(1, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 1, 2, 'LBSG7450292891', '2023-09-06 13:15:24'),
+(2, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 1, 2, 'LBSG7450292891', '2023-09-06 13:15:24'),
+(3, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 1, 2, 'KQPG3397414213', '2023-09-06 13:15:24'),
+(4, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 1, 2, 'WBZF1121829505', '2023-09-06 13:15:24');
 
 -- --------------------------------------------------------
 
@@ -194,8 +201,10 @@ INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_ema
 (2, '1', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:23:45'),
 (3, '2', 'c81e728d9d4c2f636f067f89cc14862c', '1@1', 0, '2023-09-06 08:26:15'),
 (4, '123', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:29:22'),
-(5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 0, '2023-09-06 08:33:55'),
-(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 20000, '2023-09-06 09:43:07');
+(5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 34234234, '2023-09-06 08:33:55'),
+(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 9000, '2023-09-06 09:43:07'),
+(7, '12', 'c20ad4d76fe97759aa27a0c99bff6710', '1@1', 0, '2023-09-07 04:49:30'),
+(8, '2509roblox23', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-07 04:50:16');
 
 --
 -- Indexes for dumped tables
@@ -257,13 +266,13 @@ ALTER TABLE `clone_category`
 -- AUTO_INCREMENT for table `clone_invoices`
 --
 ALTER TABLE `clone_invoices`
-  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `clone_order`
 --
 ALTER TABLE `clone_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `clone_product`
@@ -275,7 +284,7 @@ ALTER TABLE `clone_product`
 -- AUTO_INCREMENT for table `clone_user`
 --
 ALTER TABLE `clone_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
