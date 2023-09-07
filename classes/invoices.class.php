@@ -92,6 +92,7 @@ class invoices
         $query = "UPDATE clone_user SET user_asset = user_asset + $price WHERE user_id = '$user'";
         $result = $this->db->update($query);
     }
+
     public function delete_invoices($id)
     {
         $id = mysqli_real_escape_string($this->db->link, $id);

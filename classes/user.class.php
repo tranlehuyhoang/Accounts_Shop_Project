@@ -59,6 +59,7 @@ class user
 
         return $result;
     }
+    
 
 
     public function update_user($data, $id)

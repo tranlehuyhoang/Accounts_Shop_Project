@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 07, 2023 at 05:28 AM
+-- Generation Time: Sep 07, 2023 at 06:37 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -103,7 +103,8 @@ INSERT INTO `clone_invoices` (`invoices_id`, `invoices_price`, `invoices_content
 (14, 10000, '0B6OVQ', 0, 0, '2023-09-06 23:30:27'),
 (15, 10000, 'ZRKWNV', 0, 6, '2023-09-06 23:37:09'),
 (16, 100000, 'CHRZJL', 1, 6, '2023-09-07 00:51:57'),
-(17, 10000, 'H9C7D0', 1, 6, '2023-09-07 02:28:50');
+(17, 10000, 'H9C7D0', 1, 6, '2023-09-07 02:28:50'),
+(18, 20000, '4I0430', 1, 6, '2023-09-07 04:36:30');
 
 -- --------------------------------------------------------
 
@@ -118,8 +119,31 @@ CREATE TABLE `clone_order` (
   `order_price` int(225) NOT NULL,
   `order_brand` int(225) NOT NULL,
   `order_amout` int(225) NOT NULL,
+  `order_code` varchar(225) NOT NULL,
   `order_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `clone_order`
+--
+
+INSERT INTO `clone_order` (`order_id`, `order_user`, `order_data`, `order_price`, `order_brand`, `order_amout`, `order_code`, `order_date`) VALUES
+(6, 6, '', 5000, 2, 2, 'TJPK6854761624', '2023-09-07 04:09:26'),
+(7, 6, '', 5000, 2, 2, 'YDCQ5850246380', '2023-09-07 04:10:58'),
+(8, 6, '', 5000, 2, 2, 'CBJG2783873540', '2023-09-07 04:11:04'),
+(9, 6, '', 5000, 2, 2, 'WFVM2712038530', '2023-09-07 04:15:22'),
+(10, 6, '', 5000, 2, 2, 'MMDG9933547737', '2023-09-07 04:16:58'),
+(11, 6, '', 5000, 2, 2, 'BETR1100040289', '2023-09-07 04:18:42'),
+(12, 6, '', 5000, 2, 2, 'KHTG6468116484', '2023-09-07 04:19:14'),
+(13, 6, '', 5000, 2, 2, 'TZNL0553274953', '2023-09-07 04:23:25'),
+(14, 6, '', 5000, 2, 4, 'EMZP7591441268', '2023-09-07 04:23:31'),
+(15, 6, '', 5000, 2, 4, 'IPLJ2549378239', '2023-09-07 04:29:09'),
+(16, 6, '', 5000, 2, 4, 'AFHB5823459734', '2023-09-07 04:29:59'),
+(17, 6, '', 5000, 2, 4, 'AIDF9025591577', '2023-09-07 04:31:42'),
+(18, 6, '', 5000, 2, 4, 'CZRY6759345610', '2023-09-07 04:32:45'),
+(19, 6, '', 5000, 2, 4, 'DNAO8575130035', '2023-09-07 04:34:41'),
+(20, 6, '', 5000, 2, 4, 'IBQQ2050565956', '2023-09-07 04:35:01'),
+(21, 6, '', 5000, 2, 4, 'TSWD5337825424', '2023-09-07 04:36:03');
 
 -- --------------------------------------------------------
 
@@ -171,7 +195,7 @@ INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_ema
 (3, '2', 'c81e728d9d4c2f636f067f89cc14862c', '1@1', 0, '2023-09-06 08:26:15'),
 (4, '123', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:29:22'),
 (5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 0, '2023-09-06 08:33:55'),
-(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 2462000, '2023-09-06 09:43:07');
+(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 20000, '2023-09-06 09:43:07');
 
 --
 -- Indexes for dumped tables
@@ -233,13 +257,13 @@ ALTER TABLE `clone_category`
 -- AUTO_INCREMENT for table `clone_invoices`
 --
 ALTER TABLE `clone_invoices`
-  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `clone_order`
 --
 ALTER TABLE `clone_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `clone_product`

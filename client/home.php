@@ -101,6 +101,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                             icon: 'success',
                                                             confirmButtonText: 'OK'
                                                         });
+
+                                                        // Đợi 2 giây trước khi chuyển hướng
+                                                        setTimeout(function() {
+                                                            location.href = '../client/orders.php';
+                                                        }, 2000);
                                                     </script>
 <?php
                                                 }

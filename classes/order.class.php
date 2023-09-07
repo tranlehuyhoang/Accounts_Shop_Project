@@ -27,12 +27,20 @@ class order
         $query = "INSERT INTO clone_order(order_price,order_brand,order_amout,order_user,order_code) VALUES ('$order_price','$order_brand','$order_amout','$order_user','$order_code')";
         $result = $this->db->insert($query);
         if ($result) {
-            $arlet = '200';
+            $this->update_user($order_user, $order_price * $order_amout);
+            $arlet = "200";
             return $arlet;
         } else {
             $arlet = "400";
             return $arlet;
         }
+    }
+
+    public function update_user($user, $price)
+    {
+
+        $query = "UPDATE clone_user SET user_asset = user_asset - $price WHERE user_id = '$user'";
+        $result = $this->db->update($query);
     }
 
     public function random_order_content()
@@ -79,26 +87,8 @@ class order
     }
 
 
-    public function update_order($content, $user, $price)
-    {
 
-        $querys = "SELECT * FROM clone_order WHERE invoices_content = '$content' AND invoices_status = '0' ";
-        $results = $this->db->select($querys);
 
-        if (!$results) {
-            return $results;
-        }
-        $this->update_user($user, $price);
-
-        $query = "UPDATE clone_order SET invoices_status = '1' WHERE invoices_content = '$content'";
-        $result = $this->db->update($query);
-    }
-    public function update_user($user, $price)
-    {
-
-        $query = "UPDATE clone_user SET user_asset = user_asset + $price WHERE user_id = '$user'";
-        $result = $this->db->update($query);
-    }
     public function delete_order($id)
     {
         $id = mysqli_real_escape_string($this->db->link, $id);
