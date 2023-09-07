@@ -1,0 +1,37 @@
+<tr>
+                                            <td>0</td>
+                                            <td><textarea rows="1" class="form-control"
+                                                    id="coypy<?php echo $results['product_id'] ?>"
+                                                    readonly><?php echo $results['product_data'] ?></textarea></td>
+                                            <td>
+                                                <button type="button" onclick="copy()"
+                                                    data-clipboard-target="#coypy<?php echo $results['product_id'] ?>"
+                                                    class="btn btn-danger btn-sm copy"><i
+                                                        class="fas fa-copy mr-1"></i>Sao Chép</button>
+                                            </td>
+                                        </tr>
+
+
+
+
+                                           <?php
+                    $show_product_by_order_code = $order->show_product_by_order_code($_GET['bill']);
+                    if (isset($show_product_by_order_code)) {
+                        if ($show_product_by_order_code && $show_product_by_order_code->num_rows > 0) {
+                            $i = 0;
+                            while ($results = $show_product_by_order_code->fetch_assoc()) {
+                                // echo print_r($results)
+                    ?>
+                                        
+                                        <?php
+                                $i++;
+                            }
+                        } else {
+                            ?>
+                                        <?php
+                        }
+                    } else {
+                        ?>
+                                        <?php
+                    }
+                    ?>

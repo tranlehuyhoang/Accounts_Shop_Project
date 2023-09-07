@@ -76,58 +76,53 @@ class order
     }
     public function show_order()
     {
+        $order_user = $_SESSION['clone_user_id'];
         $query = "SELECT * FROM clone_order 
-        JOIN clone_user ON clone_order.invoices_user = clone_user.user_id";
+        JOIN clone_brand ON clone_order.order_brand = clone_brand.brand_id
+        WHERE clone_order.order_user = '$order_user' ";
         $result = $this->db->select($query);
-
         return $result;
     }
-    public function show_order_by_user()
+    public function show_order_by_code($order_code)
     {
-        $invoices_user = $_SESSION['clone_user_id'];
+        $order_user = $_SESSION['clone_user_id'];
         $query = "SELECT * FROM clone_order 
-        JOIN clone_user ON clone_order.invoices_user = clone_user.user_id
-        where invoices_user = '$invoices_user'
-        ";
+        JOIN clone_brand ON clone_order.order_brand = clone_brand.brand_id
+        WHERE clone_order.order_code = '$order_code' AND clone_order.order_user = '$order_user' LIMIT 1";
         $result = $this->db->select($query);
-
-        return $result;
-    }
-
-
-
-
-    public function delete_order($id)
-    {
-        $id = mysqli_real_escape_string($this->db->link, $id);
-        $query = "DELETE FROM tbl_order WHERE categoryid = '$id'";
-        $result = $this->db->delete($query);
-
-
         if ($result) {
-            $arlet = "<div class='alert alert-success' role='alert'>Insert Category Successfully</div>";
-            return $arlet;
-        } else {
-            $arlet = "<div class='alert alert-danger' role='alert'>Insert Category Successfully</div>";
-
-            return $arlet;
-        }
-    }
-
-    public function getinvoicesbyid($id)
-
-    {
-        $invoices_user = $_SESSION['clone_user_id'];
-        $query = "SELECT * FROM clone_order WHERE invoices_content = '$id' AND invoices_user = '$invoices_user'";
-        $result = $this->db->select($query);
-
-        if ($result) {
-
             return $result;
         } else {
             $arlet = "400";
-
             return $arlet;
         }
     }
+
+    public function show_product_by_order_code($order_code)
+    {
+        // $query = "SELECT * FROM clone_product";
+        $query = "SELECT * FROM clone_product where product_order = '$order_code'";
+        $result = $this->db->select($query);
+
+        return $result;
+    }
+
+
+
+    // public function getinvoicesbyid($id)
+
+    // {
+    //     $invoices_user = $_SESSION['clone_user_id'];
+    //     $query = "SELECT * FROM clone_order WHERE invoices_content = '$id' AND invoices_user = '$invoices_user'";
+    //     $result = $this->db->select($query);
+
+    //     if ($result) {
+
+    //         return $result;
+    //     } else {
+    //         $arlet = "400";
+
+    //         return $arlet;
+    //     }
+    // }
 }
