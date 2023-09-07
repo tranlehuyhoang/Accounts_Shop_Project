@@ -584,8 +584,8 @@ setTimeout(function() {
                             </div>
                         </div>
                         <div class="d-flex justify-content-end align-items-center border-top-table p-3">
-                            <a type="button" href="https://clonesnew.com/client/orders"
-                                class="btn btn-secondary btn-sm"><i class="fas fa-cart-arrow-down mr-1"></i>Lịch
+                            <a type="button" href="../client/orders.php" class="btn btn-secondary btn-sm"><i
+                                    class="fas fa-cart-arrow-down mr-1"></i>Lịch
                                 Sử Mua Hàng</a>
                         </div>
                     </div>

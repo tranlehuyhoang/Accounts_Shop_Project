@@ -18,6 +18,11 @@ if (isset($_SESSION['clone_user_id'])) {
 }
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     $user->logout();
+?>
+    <script type="text/javascript">
+        location.href = '../client/home.php';
+    </script>
+<?php
 }
 
 

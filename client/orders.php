@@ -76,9 +76,29 @@ if (!isset($_SESSION['clone_user_id'])) {
                                             <td><a type="button"
                                                     href="../client/orders_detail.php?bill=<?php echo $results['order_code'] ?>"
                                                     class="btn btn-primary btn-sm">Xem Thêm</a>
-                                                <button type="button"
-                                                    onclick="downloadFile(`PCLA1693978818`, `0fa5978762a28811e77eb369d275de0b`)"
-                                                    class="btn btn-danger btn-sm">Tải Về</button>
+                                                <button type="button" onclick="downloadFile('<?php echo $results['order_code']; ?>',`
+<?php
+                                                    $show_product_by_order_code1 = $order->show_product_by_order_code($results['order_code']);
+                                                    if (isset($show_product_by_order_code1)) {
+                                                        if ($show_product_by_order_code1 && $show_product_by_order_code1->num_rows > 0) {
+                                                            $i = 0;
+                                                            while ($resultss = $show_product_by_order_code1->fetch_assoc()) {
+?>
+'<?php echo $resultss['product_data']; ?>'
+<?php
+                                                                $i++;
+                                                            }
+                                                        } else {
+?>
+
+<?php
+                                                        }
+                                                    } else {
+?>
+
+<?php
+                                                    }
+?>`)" class="btn btn-danger btn-sm">Tải Về</button>
                                                 <button type="button"
                                                     onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)"
                                                     class="btn btn-warning btn-sm">Xoá</button>

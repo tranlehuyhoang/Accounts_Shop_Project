@@ -1,6 +1,9 @@
 <?php
 include_once '../inc/header.inc.php';
 
+if (!isset($_SESSION['clone_user_id'])) {
+    echo "<script>location.href = '../client/login.php';</script>";
+}
 $show_invoices = $invoices->show_invoices_by_user();
 ?>
 <div style="padding-top:90px">
@@ -48,61 +51,49 @@ $show_invoices = $invoices->show_invoices_by_user();
                                                 while ($results = $show_invoices->fetch_assoc()) {
                                                     // echo print_r($results)
                                         ?>
-                                        <tr>
-                                            <td><?php echo $results['invoices_id'] ?></td>
-                                            <td><a target="_blank"
-                                                    href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>"><i
-                                                        class="fas fa-file-alt"></i>
-                                                    <?php echo $results['invoices_content'] ?></a></td>
-                                            <td><b style="font-size:15px;">VTB</b></td>
-                                            <td><b style="color: red;"><?php echo $results['invoices_price']?></b>
-                                            </td>
-                                            <td><b
-                                                    style="color: green;"><?php echo number_format($results['invoices_price']) ?>đ</b>
-                                            </td>
-                                            <td>
-                                                <?php
+                                                    <tr>
+                                                        <td><?php echo $results['invoices_id'] ?></td>
+                                                        <td><a target="_blank" href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>"><i class="fas fa-file-alt"></i>
+                                                                <?php echo $results['invoices_content'] ?></a></td>
+                                                        <td><b style="font-size:15px;">VTB</b></td>
+                                                        <td><b style="color: red;"><?php echo $results['invoices_price'] ?></b>
+                                                        </td>
+                                                        <td><b style="color: green;"><?php echo number_format($results['invoices_price']) ?>đ</b>
+                                                        </td>
+                                                        <td>
+                                                            <?php
                                                             if ($results['invoices_status'] == '0') {
                                                             ?>
-                                                <p
-                                                    class="mb-0 text-warning font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Đang chờ thanh toán</p>
-                                                <?php
+                                                                <p class="mb-0 text-warning font-weight-bold d-flex justify-content-start align-items-center">
+                                                                    Đang chờ thanh toán</p>
+                                                            <?php
                                                             } else {
                                                             ?>
-                                                <p
-                                                    class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
-                                                    Đã thanh toán</p>
-                                                <?php
+                                                                <p class="mb-0 text-success font-weight-bold d-flex justify-content-start align-items-center">
+                                                                    Đã thanh toán</p>
+                                                            <?php
                                                             }
                                                             ?>
 
-                                            </td>
-                                            <td><?php echo $results['invoices_date'] ?></td>
-                                            <td>
-                                                <a class="" data-toggle="tooltip" data-placement="top" title=""
-                                                    data-original-title="Chi tiết hoá đơn"
-                                                    href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4"
-                                                        width="20" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                        </path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <?php
+                                                        </td>
+                                                        <td><?php echo $results['invoices_date'] ?></td>
+                                                        <td>
+                                                            <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chi tiết hoá đơn" href="../client/payment.php?bill=<?php echo $results['invoices_content'] ?>">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
+                                                                    </path>
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                                                    </path>
+                                                                </svg>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php
                                                     $i++;
                                                 }
                                             } else {
                                                 ?>
-                                        <?php
+                                            <?php
                                             }
                                         } else {
                                             ?>
@@ -147,8 +138,7 @@ $show_invoices = $invoices->show_invoices_by_user();
                     document.write(new Date().getFullYear())
                     </script>© <a href="#" class="">CLONESNEW.SITE</a>
                     All Rights Reserved |  -->
-                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank"
-                        href="../client/home.php">PS26819</a>
+                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank" href="../client/home.php">PS26819</a>
                 </span>
             </div>
         </div>

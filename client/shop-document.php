@@ -32,13 +32,18 @@ include_once '../inc/header.inc.php';
                                     c&oacute; ghi ch&uacute; r&otilde; r&agrave;ng về c&aacute;c kiểu xuất
                                     file&nbsp;</span><br />
                                 <span style="font-size:14px"><strong><span style="background-color:#f1c40f">Zalo
-                                            hỗ trợ : </span><span style="background-color:#ffffff">0337799453</span></strong></span><br />
-                                <span style="font-size:16px"><strong><span style="background-color:#f1c40f">Hotline&nbsp;hỗ
-                                            trợ</span></strong><span style="background-color:#f1c40f">:&nbsp;</span><strong><span style="background-color:#ffffff">0337799453</span></strong></span>
+                                            hỗ trợ : </span><span
+                                            style="background-color:#ffffff">0337799453</span></strong></span><br />
+                                <span style="font-size:16px"><strong><span
+                                            style="background-color:#f1c40f">Hotline&nbsp;hỗ
+                                            trợ</span></strong><span
+                                        style="background-color:#f1c40f">:&nbsp;</span><strong><span
+                                            style="background-color:#ffffff">0337799453</span></strong></span>
                             </p>
 
                             <p style="text-align:center"><strong>Join group Zalo để thảo luận
-                                    nh&eacute;!&nbsp;</strong>:<span style="font-size:18px"><strong><a href="https://zalo.me/g/gzojdf259">Group ZALO</a></strong></span>
+                                    nh&eacute;!&nbsp;</strong>:<span style="font-size:18px"><strong><a
+                                            href="https://zalo.me/g/gzojdf259">Group ZALO</a></strong></span>
                             </p>
 
                             <ul>
@@ -56,7 +61,10 @@ include_once '../inc/header.inc.php';
                             </ul>
 
                             <p style="text-align:center">Rất cảm ơn c&aacute;c bạn đ&atilde; v&agrave; đang ủng
-                                hộ CLONESNEW.SITE, rất mong rằng sẽ phục vụ c&aacute;c bạn tốt nhất&nbsp;<img alt="heart" src="https://muameta.net/public/ckeditor/plugins/smiley/images/heart.png" title="heart" /><br />
+                                hộ CLONESNEW.SITE, rất mong rằng sẽ phục vụ c&aacute;c bạn tốt nhất&nbsp;<img
+                                    alt="heart"
+                                    src="https://muameta.net/public/ckeditor/plugins/smiley/images/heart.png"
+                                    title="heart" /><br />
                                 <span style="font-size:28px"><span style="color:#8e44ad">X&Oacute;A DATA ĐƠN
                                         H&Agrave;NG SAU 5&nbsp;NG&Agrave;Y KỂ TỪ NG&Agrave;Y MUA&nbsp;AE LƯU
                                         &Yacute;</span></span>
@@ -76,17 +84,21 @@ include_once '../inc/header.inc.php';
                         <div class="card-body">
                             <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab-1" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab-fill" onclick="showProduct(0)" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-shopping-cart mr-1"></i>Tất Cả Sản
+                                    <a class="nav-link active" id="pills-home-tab-fill" onclick="showProduct(0)"
+                                        data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home"
+                                        aria-selected="true"><i class="fas fa-shopping-cart mr-1"></i>Tất Cả Sản
                                         Phẩm</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="pills-tabContent-1">
-                                <div class="tab-pane fade show active" id="pills-home-fill" role="tabpanel" aria-labelledby="pills-home-tab-fill">
+                                <div class="tab-pane fade show active" id="pills-home-fill" role="tabpanel"
+                                    aria-labelledby="pills-home-tab-fill">
                                     <div id="showProduct">
                                         <div class="row">
                                             <div class="col-sm-12 text-center">
                                                 <div class="iq-maintenance">
-                                                    <img src="https://clonesnew.com/public/datum/assets/images/error/maintenance.png" class="img-fluid" alt="">
+                                                    <img src="https://clonesnew.com/public/datum/assets/images/error/maintenance.png"
+                                                        class="img-fluid" alt="">
                                                     <h3 class="mt-4 mb-2">Sản phẩm không tồn tại</h3>
                                                 </div>
                                             </div>
@@ -98,7 +110,8 @@ include_once '../inc/header.inc.php';
                             </div>
                         </div>
                         <div class="d-flex justify-content-end align-items-center border-top-table p-3">
-                            <a type="button" href="https://clonesnew.com/client/orders" class="btn btn-secondary btn-sm"><i class="fas fa-cart-arrow-down mr-1"></i>Lịch Sử Mua
+                            <a type="button" href="../client/orders.php" class="btn btn-secondary btn-sm"><i
+                                    class="fas fa-cart-arrow-down mr-1"></i>Lịch Sử Mua
                                 Hàng</a>
                         </div>
                     </div>
@@ -118,22 +131,26 @@ include_once '../inc/header.inc.php';
                             <div class="modal-body">
                                 <div class="form-group mb-3">
                                     <label>Tên sản phẩm:</label>
-                                    <input class="form-control" type="hidden" id="token" value="25f78b1021a96a1df271ba06e29ab889">
+                                    <input class="form-control" type="hidden" id="token"
+                                        value="25f78b1021a96a1df271ba06e29ab889">
                                     <input type="text" class="form-control" id="name" readonly />
                                     <input type="hidden" value="" readonly class="form-control" id="modal-id">
                                     <input type="hidden" value="" readonly class="form-control" id="price">
                                 </div>
                                 <div class="form-group mb-3" id="showDiscountCode">
                                     <label>Mã giảm giá:</label>
-                                    <input type="text" class="form-control" onchange="totalPayment()" onkeyup="totalPayment()" placeholder="Nhập mã giảm giá của bạn" id="coupon" />
+                                    <input type="text" class="form-control" onchange="totalPayment()"
+                                        onkeyup="totalPayment()" placeholder="Nhập mã giảm giá của bạn" id="coupon" />
                                 </div>
-                                <div class="mb-3 text-right"><button id="btnshowDiscountCode" onclick="showDiscountCode()" class="btn btn-danger btn-sm">Nhập mã giảm
+                                <div class="mb-3 text-right"><button id="btnshowDiscountCode"
+                                        onclick="showDiscountCode()" class="btn btn-danger btn-sm">Nhập mã giảm
                                         giá</button></div>
                                 <div class="mb-3 text-center" style="font-size: 20px;">Tổng tiền cần thanh toán:
                                     <b id="total" style="color:red;">0</b>
                                 </div>
                                 <div class="text-center mb-3">
-                                    <button type="submit" id="btnBuy" onclick="buyDocument()" class="btn btn-primary btn-block"><i class="fas fa-credit-card mr-1"></i>Thanh
+                                    <button type="submit" id="btnBuy" onclick="buyDocument()"
+                                        class="btn btn-primary btn-block"><i class="fas fa-credit-card mr-1"></i>Thanh
                                         toán</span></button>
                                 </div>
                             </div>
@@ -142,127 +159,127 @@ include_once '../inc/header.inc.php';
                 </div>
 
                 <script type="text/javascript">
-                    // function buyDocument() {
-                    //     var id = $("#modal-id").val();
-                    //     var amount = $("#amount").val();
-                    //     var token = $("#token").val();
-                    //     $('#btnBuy').html('<i class="fa fa-spinner fa-spin"></i> Loading...').prop('disabled',
-                    //         true);
-                    //     $.ajax({
-                    //         url: "https://clonesnew.com/ajaxs/client/buyDocument.php",
-                    //         method: "POST",
-                    //         dataType: "JSON",
-                    //         data: {
-                    //             token: token,
-                    //             id: id,
-                    //             coupon: $("#coupon").val()
-                    //         },
-                    //         success: function(data) {
-                    //             $('#btnBuy').html('<i class="fas fa-credit-card mr-1"></i>Thanh toán')
-                    //                 .prop(
-                    //                     'disabled', false);
-                    //             if (data.status == 'success') {
-                    //                 cuteToast({
-                    //                     type: "success",
-                    //                     message: data.msg,
-                    //                     timer: 5000
-                    //                 });
-                    //                 setTimeout("location.href = 'https://clonesnew.com/client/orders';",
-                    //                     1000);
-                    //             } else {
-                    //                 cuteToast({
-                    //                     type: "error",
-                    //                     message: data.msg,
-                    //                     timer: 5000
-                    //                 });
-                    //             }
-                    //         },
-                    //         error: function() {
-                    //             $('#btnBuy').html('<i class="fas fa-credit-card mr-1"></i>Thanh toán')
-                    //                 .prop(
-                    //                     'disabled', false);
-                    //             cuteToast({
-                    //                 type: "error",
-                    //                 message: 'Không thể xử lý',
-                    //                 timer: 5000
-                    //             });
-                    //         }
-                    //     });
-                    // }
+                // function buyDocument() {
+                //     var id = $("#modal-id").val();
+                //     var amount = $("#amount").val();
+                //     var token = $("#token").val();
+                //     $('#btnBuy').html('<i class="fa fa-spinner fa-spin"></i> Loading...').prop('disabled',
+                //         true);
+                //     $.ajax({
+                //         url: "https://clonesnew.com/ajaxs/client/buyDocument.php",
+                //         method: "POST",
+                //         dataType: "JSON",
+                //         data: {
+                //             token: token,
+                //             id: id,
+                //             coupon: $("#coupon").val()
+                //         },
+                //         success: function(data) {
+                //             $('#btnBuy').html('<i class="fas fa-credit-card mr-1"></i>Thanh toán')
+                //                 .prop(
+                //                     'disabled', false);
+                //             if (data.status == 'success') {
+                //                 cuteToast({
+                //                     type: "success",
+                //                     message: data.msg,
+                //                     timer: 5000
+                //                 });
+                //                 setTimeout("location.href = 'https://clonesnew.com/client/orders';",
+                //                     1000);
+                //             } else {
+                //                 cuteToast({
+                //                     type: "error",
+                //                     message: data.msg,
+                //                     timer: 5000
+                //                 });
+                //             }
+                //         },
+                //         error: function() {
+                //             $('#btnBuy').html('<i class="fas fa-credit-card mr-1"></i>Thanh toán')
+                //                 .prop(
+                //                     'disabled', false);
+                //             cuteToast({
+                //                 type: "error",
+                //                 message: 'Không thể xử lý',
+                //                 timer: 5000
+                //             });
+                //         }
+                //     });
+                // }
                 </script>
                 <script type="text/javascript">
-                    // showProduct(0);
+                // showProduct(0);
 
-                    // function showProduct(id) {
-                    //     $("#showProduct").html(
-                    //         '<center><img src="https://clonesnew.com/assets/storage/images/gif_loadingZOA.png" width="100px" /></center>'
-                    //     );
-                    //     $.ajax({
-                    //         url: "https://clonesnew.com/ajaxs/client/showDocument.php",
-                    //         method: "POST",
-                    //         data: {
-                    //             id: id
-                    //         },
-                    //         success: function(data) {
-                    //             $("#showProduct").html(data);
-                    //         },
-                    //         error: function() {
-                    //             cuteToast({
-                    //                 type: "error",
-                    //                 message: 'Không thể xử lý',
-                    //                 timer: 5000
-                    //             });
-                    //         }
-                    //     });
-                    // }
-                    // document.getElementById('showDiscountCode').style.display = 'none';
+                // function showProduct(id) {
+                //     $("#showProduct").html(
+                //         '<center><img src="https://clonesnew.com/assets/storage/images/gif_loadingZOA.png" width="100px" /></center>'
+                //     );
+                //     $.ajax({
+                //         url: "https://clonesnew.com/ajaxs/client/showDocument.php",
+                //         method: "POST",
+                //         data: {
+                //             id: id
+                //         },
+                //         success: function(data) {
+                //             $("#showProduct").html(data);
+                //         },
+                //         error: function() {
+                //             cuteToast({
+                //                 type: "error",
+                //                 message: 'Không thể xử lý',
+                //                 timer: 5000
+                //             });
+                //         }
+                //     });
+                // }
+                // document.getElementById('showDiscountCode').style.display = 'none';
 
-                    // function showDiscountCode() {
-                    //     if (document.getElementById('showDiscountCode').style.display == 'none') {
-                    //         document.getElementById('btnshowDiscountCode').className = "btn btn-sm btn-dark";
-                    //         $('#btnshowDiscountCode').html('Huỷ mã giảm giá');
-                    //         document.getElementById('showDiscountCode').style.display = 'block';
-                    //     } else {
-                    //         document.getElementById('btnshowDiscountCode').className = "btn btn-sm btn-danger";
-                    //         $('#btnshowDiscountCode').html('Nhập mã giảm giá');
-                    //         document.getElementById('showDiscountCode').style.display = 'none';
-                    //         document.getElementById('coupon').value = '';
-                    //         totalPayment();
-                    //     }
-                    // }
+                // function showDiscountCode() {
+                //     if (document.getElementById('showDiscountCode').style.display == 'none') {
+                //         document.getElementById('btnshowDiscountCode').className = "btn btn-sm btn-dark";
+                //         $('#btnshowDiscountCode').html('Huỷ mã giảm giá');
+                //         document.getElementById('showDiscountCode').style.display = 'block';
+                //     } else {
+                //         document.getElementById('btnshowDiscountCode').className = "btn btn-sm btn-danger";
+                //         $('#btnshowDiscountCode').html('Nhập mã giảm giá');
+                //         document.getElementById('showDiscountCode').style.display = 'none';
+                //         document.getElementById('coupon').value = '';
+                //         totalPayment();
+                //     }
+                // }
 
-                    // function totalPayment() {
-                    //     $('#total').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...');
-                    //     $.ajax({
-                    //         url: "https://clonesnew.com/ajaxs/client/totalPayment.php",
-                    //         method: "POST",
-                    //         data: {
-                    //             id: $("#modal-id").val(),
-                    //             coupon: $("#coupon").val(),
-                    //             token: $("#token").val(),
-                    //             store: 'documents'
-                    //         },
-                    //         success: function(data) {
-                    //             $("#total").html(data);
-                    //         },
-                    //         error: function() {
-                    //             cuteToast({
-                    //                 type: "error",
-                    //                 message: 'Không thể tính kết quả thanh toán',
-                    //                 timer: 5000
-                    //             });
-                    //         }
-                    //     });
-                    //     //$("#total").html(total.toString().replace(/(.)(?=(\d{3})+$)/g, '$1,'));
-                    // }
+                // function totalPayment() {
+                //     $('#total').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...');
+                //     $.ajax({
+                //         url: "https://clonesnew.com/ajaxs/client/totalPayment.php",
+                //         method: "POST",
+                //         data: {
+                //             id: $("#modal-id").val(),
+                //             coupon: $("#coupon").val(),
+                //             token: $("#token").val(),
+                //             store: 'documents'
+                //         },
+                //         success: function(data) {
+                //             $("#total").html(data);
+                //         },
+                //         error: function() {
+                //             cuteToast({
+                //                 type: "error",
+                //                 message: 'Không thể tính kết quả thanh toán',
+                //                 timer: 5000
+                //             });
+                //         }
+                //     });
+                //     //$("#total").html(total.toString().replace(/(.)(?=(\d{3})+$)/g, '$1,'));
+                // }
 
-                    // function modalBuy(id, price, name) {
-                    //     $("#modal-id").val(id);
-                    //     $("#price").val(price);
-                    //     $("#name").val(name);
-                    //     $("#modalBuy").modal();
-                    //     totalPayment();
-                    // }
+                // function modalBuy(id, price, name) {
+                //     $("#modal-id").val(id);
+                //     $("#price").val(price);
+                //     $("#name").val(name);
+                //     $("#modalBuy").modal();
+                //     totalPayment();
+                // }
                 </script>
             </div>
         </div>
@@ -298,18 +315,18 @@ include_once '../inc/header.inc.php';
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
-        setTimeout(e => {
-            ShowModal_notice_popup()
-        }, 0)
-    });
+$(document).ready(function() {
+    setTimeout(e => {
+        ShowModal_notice_popup()
+    }, 0)
+});
 
-    function ShowModal_notice_popup() {
-        $('#notice_popup').modal({
-            keyboard: true,
-            show: true
-        });
-    }
+function ShowModal_notice_popup() {
+    $('#notice_popup').modal({
+        keyboard: true,
+        show: true
+    });
+}
 </script>
 
 </div>
@@ -335,7 +352,8 @@ include_once '../inc/header.inc.php';
                     document.write(new Date().getFullYear())
                     </script>© <a href="#" class="">CLONESNEW.SITE</a>
                     All Rights Reserved |  -->
-                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank" href="../client/home.php">PS26819</a>
+                    Version <b style="color: red;">6.2.7</b> | Powered By <a target="_blank"
+                        href="../client/home.php">PS26819</a>
                 </span>
             </div>
         </div>
