@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 07, 2023 at 11:24 AM
+-- Generation Time: Sep 07, 2023 at 12:18 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -105,7 +105,8 @@ INSERT INTO `clone_invoices` (`invoices_id`, `invoices_price`, `invoices_content
 (16, 100000, 'CHRZJL', 1, 6, '2023-09-07 00:51:57'),
 (17, 10000, 'H9C7D0', 1, 6, '2023-09-07 02:28:50'),
 (18, 20000, '4I0430', 1, 6, '2023-09-07 04:36:30'),
-(19, 10000, 'ZSY2Q1', 0, 6, '2023-09-07 04:46:14');
+(19, 10000, 'ZSY2Q1', 0, 6, '2023-09-07 04:46:14'),
+(20, 100000, 'I4U0OE', 1, 6, '2023-09-07 09:59:59');
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,8 @@ CREATE TABLE `clone_order` (
 --
 
 INSERT INTO `clone_order` (`order_id`, `order_user`, `order_data`, `order_price`, `order_brand`, `order_amout`, `order_code`, `order_date`) VALUES
-(28, 6, '', 5000, 2, 1, 'JULD4726635482', '2023-09-07 09:24:13');
+(28, 6, '', 5000, 2, 1, 'JULD4726635482', '2023-09-07 09:24:13'),
+(29, 6, '', 5000, 2, 3, 'KOPG8931875929', '2023-09-07 10:00:19');
 
 -- --------------------------------------------------------
 
@@ -152,9 +154,9 @@ CREATE TABLE `clone_product` (
 
 INSERT INTO `clone_product` (`product_id`, `product_data`, `product_selled`, `product_brand`, `product_order`, `product_date`) VALUES
 (1, 'hitmaldalyq@hotmail.com|qKcIOa43', 1, 2, 'JULD4726635482', '2023-09-06 13:15:24'),
-(2, 'hitmaldalyq@hotmail.com|qKcIOa43', 0, 2, '0', '2023-09-06 13:15:24'),
-(3, 'hitmaldalyq@hotmail.com|qKcIOa43', 0, 2, '0', '2023-09-06 13:15:24'),
-(4, 'hitmaldalyq@hotmail.com|qKcIOa43', 0, 2, '0', '2023-09-06 13:15:24');
+(2, 'hitmaldalyq@hotmail.com|qKcIOa43', 1, 2, 'KOPG8931875929', '2023-09-06 13:15:24'),
+(3, 'hitmaldalyq@hotmail.com|qKcIOa43', 1, 2, 'KOPG8931875929', '2023-09-06 13:15:24'),
+(4, 'hitmaldalyq@hotmail.com|qKcIOa43', 1, 2, 'KOPG8931875929', '2023-09-06 13:15:24');
 
 -- --------------------------------------------------------
 
@@ -181,9 +183,10 @@ INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_ema
 (3, '2', 'c81e728d9d4c2f636f067f89cc14862c', '1@1', 0, '2023-09-06 08:26:15'),
 (4, '123', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:29:22'),
 (5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 34234234, '2023-09-06 08:33:55'),
-(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 4000, '2023-09-06 09:43:07'),
+(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 89000, '2023-09-06 09:43:07'),
 (7, '12', 'c20ad4d76fe97759aa27a0c99bff6710', '1@1', 0, '2023-09-07 04:49:30'),
-(8, '2509roblox23', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-07 04:50:16');
+(8, '2509roblox23', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-07 04:50:16'),
+(9, '2509robloxx', '9c1042456b2bed589dbc7f6532ec7d58', '2509robloxx@faf', 0, '2023-09-07 10:12:38');
 
 --
 -- Indexes for dumped tables
@@ -245,13 +248,13 @@ ALTER TABLE `clone_category`
 -- AUTO_INCREMENT for table `clone_invoices`
 --
 ALTER TABLE `clone_invoices`
-  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `clone_order`
 --
 ALTER TABLE `clone_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `clone_product`
@@ -263,7 +266,7 @@ ALTER TABLE `clone_product`
 -- AUTO_INCREMENT for table `clone_user`
 --
 ALTER TABLE `clone_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
