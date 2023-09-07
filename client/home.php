@@ -1,10 +1,104 @@
 <?php
 include_once '../inc/header.inc.php';
-
+?>
+<script src="../public/datum/assets/js/backend-bundle.min.js"></script>
+<!-- Chart Custom JavaScript -->
+<script src="../public/datum/assets/js/customizer.js"></script>
+<script src="../public/datum/assets/js/sidebar.js"></script>
+<!-- Flextree Javascript-->
+<script src="../public/datum/assets/js/flex-tree.min.js"></script>
+<script src="../public/datum/assets/js/tree.js"></script>
+<!-- Table Treeview JavaScript -->
+<script src="../public/datum/assets/js/table-treeview.js"></script>
+<!-- SweetAlert JavaScript -->
+<script src="../public/datum/assets/js/sweetalert.js"></script>
+<!-- Vectoe Map JavaScript -->
+<script src="../public/datum/assets/js/vector-map-custom.js"></script>
+<!-- Chart Custom JavaScript -->
+<script src="../public/datum/assets/js/chart-custom.js"></script>
+<script src="../public/datum/assets/js/charts/01.js"></script>
+<script src="../public/datum/assets/js/charts/02.js"></script>
+<!-- slider JavaScript -->
+<script src="../public/datum/assets/js/slider.js"></script>
+<!-- Emoji picker -->
+<script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module"></script>
+<!-- app JavaScript -->
+<script src="../public/datum/assets/js/app.js"></script>
+<?php
 $showcategory = $category->show_category();
 $showcategory1 = $category->show_category();
 $show_brand = $brand->show_brand();
+$get_asset_user = $user->get_asset_user();
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (!isset($_SESSION['clone_user_id'])) {
+        echo "<script>location.href = '../client/login.php';</script>";
+    } else {
+        // echo $_POST['modal-id'] . '<br/>';
+
+        // echo $_POST['price'] . '<br/>';
+        // echo $_POST['amount'] . '<br/>';
+
+        $countProducts = $product->countProduct($_POST['modal-id']);
+        if (isset($countProducts)) {
+            if ($countProducts && $countProducts->num_rows > 0) {
+                $i = 0;
+                while ($resultsssa = $countProducts->fetch_assoc()) {
+                    // echo $resultsssa['total'] . '<br/>';
+
+                    if ($resultsssa['total'] == '0') {
+?>
+                        <script type="text/javascript">
+                            Swal.fire({
+                                title: 'Thất bại!',
+                                text: 'Sản phẩm hiện đã hết hàng ',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        </script>
+                        <?php
+                    } else {
+                        if ($resultsssa['total'] < $_POST['amount']) {
+                        ?>
+                            <script type="text/javascript">
+                                Swal.fire({
+                                    title: 'Thất bại!',
+                                    text: 'Số lượng trong hệ thống không đủ ',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            </script>
+                            <?php
+                        } else {
+                            if (isset($get_asset_user)) {
+                                if ($get_asset_user && $get_asset_user->num_rows > 0) {
+                                    $i = 0;
+                                    while ($get_asset_userss = $get_asset_user->fetch_assoc()) {
+                                        echo $_POST['price'] * $_POST['amount'];
+                                        if (($_POST['price'] * $_POST['amount']) > $get_asset_userss['user_asset']) {
+                            ?>
+                                            <script type="text/javascript">
+                                                Swal.fire({
+                                                    title: 'Thất bại!',
+                                                    text: 'Số dư không đủ, vui lòng nạp thêm ',
+                                                    icon: 'error',
+                                                    confirmButtonText: 'OK'
+                                                });
+                                            </script>
+<?php
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 ?>
@@ -482,9 +576,9 @@ $show_brand = $brand->show_brand();
                                     <div class="form-group mb-3">
                                         <label>Số lượng cần mua:</label>
                                         <input type="number" class="form-control form-control-solid" style="display: none;" id="price_product" />
-                                        <input type="number" class="form-control form-control-solid" placeholder="Nhập số lượng cần mua" id="amount" min="1" required onchange="totalPayment()" onkeyup="totalPayment()" />
-                                        <input type="hidden" value="" readonly class="form-control" id="modal-id">
-                                        <input type="hidden" value="" readonly class="form-control" id="price">
+                                        <input type="number" class="form-control form-control-solid" placeholder="Nhập số lượng cần mua" name="amount" id="amount" min="1" required onchange="totalPayment()" onkeyup="totalPayment()" />
+                                        <input type="hidden" value="" readonly class="form-control" id="modal-id" name="modal-id">
+                                        <input type="hidden" value="" readonly class="form-control" name="price" id="price">
                                         <input class="form-control" type="hidden" id="token" value="">
                                     </div>
                                     <div id="hotdeal"></div>
@@ -621,7 +715,7 @@ $show_brand = $brand->show_brand();
                     <p>xin cảm ơn !!</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" name="hide_notice_popup">Không hiển thị
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Không hiển thị
                         lại</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
@@ -681,29 +775,7 @@ $show_brand = $brand->show_brand();
 
 
 <!-- Backend Bundle JavaScript -->
-<script src="../public/datum/assets/js/backend-bundle.min.js"></script>
-<!-- Chart Custom JavaScript -->
-<script src="../public/datum/assets/js/customizer.js"></script>
-<script src="../public/datum/assets/js/sidebar.js"></script>
-<!-- Flextree Javascript-->
-<script src="../public/datum/assets/js/flex-tree.min.js"></script>
-<script src="../public/datum/assets/js/tree.js"></script>
-<!-- Table Treeview JavaScript -->
-<script src="../public/datum/assets/js/table-treeview.js"></script>
-<!-- SweetAlert JavaScript -->
-<script src="../public/datum/assets/js/sweetalert.js"></script>
-<!-- Vectoe Map JavaScript -->
-<script src="../public/datum/assets/js/vector-map-custom.js"></script>
-<!-- Chart Custom JavaScript -->
-<script src="../public/datum/assets/js/chart-custom.js"></script>
-<script src="../public/datum/assets/js/charts/01.js"></script>
-<script src="../public/datum/assets/js/charts/02.js"></script>
-<!-- slider JavaScript -->
-<script src="../public/datum/assets/js/slider.js"></script>
-<!-- Emoji picker -->
-<script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module"></script>
-<!-- app JavaScript -->
-<script src="../public/datum/assets/js/app.js"></script>
+
 <!-- Dev By PS26819 | FB.COM/PS26819 | ZALO.ME/0947838128 | MMO Solution -->
 <!-- Script Footer -->
 </body>

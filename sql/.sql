@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 07, 2023 at 02:55 AM
+-- Generation Time: Sep 07, 2023 at 05:28 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -95,14 +95,31 @@ INSERT INTO `clone_invoices` (`invoices_id`, `invoices_price`, `invoices_content
 (6, 12000, 'SB7TCN', 1, 6, '2023-09-06 15:09:37'),
 (7, 12000, 'XNT4JK', 0, 6, '2023-09-06 15:10:34'),
 (8, 12000, 'EFY587', 0, 6, '2023-09-06 15:10:43'),
-(9, 1500000, '22LYU6', 0, 6, '2023-09-06 15:13:09'),
+(9, 1500000, '22LYU6', 1, 6, '2023-09-06 15:13:09'),
 (10, 12000, '3FCTQR', 0, 6, '2023-09-06 15:14:05'),
 (11, 15000, '94H6BB', 0, 6, '2023-09-06 15:27:47'),
 (12, 123123, '1RLFD8', 0, 5, '2023-09-06 16:27:55'),
 (13, 34234234, 'BCUBVA', 0, 5, '2023-09-06 16:28:54'),
 (14, 10000, '0B6OVQ', 0, 0, '2023-09-06 23:30:27'),
 (15, 10000, 'ZRKWNV', 0, 6, '2023-09-06 23:37:09'),
-(16, 100000, 'CHRZJL', 1, 6, '2023-09-07 00:51:57');
+(16, 100000, 'CHRZJL', 1, 6, '2023-09-07 00:51:57'),
+(17, 10000, 'H9C7D0', 1, 6, '2023-09-07 02:28:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clone_order`
+--
+
+CREATE TABLE `clone_order` (
+  `order_id` int(11) NOT NULL,
+  `order_user` int(11) NOT NULL,
+  `order_data` text NOT NULL,
+  `order_price` int(225) NOT NULL,
+  `order_brand` int(225) NOT NULL,
+  `order_amout` int(225) NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -115,6 +132,7 @@ CREATE TABLE `clone_product` (
   `product_data` varchar(225) NOT NULL,
   `product_selled` int(225) NOT NULL,
   `product_brand` int(225) NOT NULL,
+  `product_order` int(11) NOT NULL,
   `product_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -122,11 +140,11 @@ CREATE TABLE `clone_product` (
 -- Dumping data for table `clone_product`
 --
 
-INSERT INTO `clone_product` (`product_id`, `product_data`, `product_selled`, `product_brand`, `product_date`) VALUES
-(1, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, '2023-09-06 13:15:24'),
-(2, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, '2023-09-06 13:15:24'),
-(3, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, '2023-09-06 13:15:24'),
-(4, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, '2023-09-06 13:15:24');
+INSERT INTO `clone_product` (`product_id`, `product_data`, `product_selled`, `product_brand`, `product_order`, `product_date`) VALUES
+(1, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24'),
+(2, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24'),
+(3, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24'),
+(4, '61550100624223|kelleyauyqsuarez118|MPQZTKRMVMXX22SFUGKDMFJJLQDPBEWU|EAAAAUaZA8jlABO80kfpXJ1nKpZBENNbL4ZBdPotyAxnJSjdOxE6YNRSgH9rsLOw9X8Xgxpc1Dh1vLTk1l9FsiNGS8A4lIgM1EtEVihU688FS4BPEZCAT66fMKtQK8bObMZAxEuGmlf11pCwtPTJoU9oqr8Ld', 0, 2, 0, '2023-09-06 13:15:24');
 
 -- --------------------------------------------------------
 
@@ -153,7 +171,7 @@ INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_ema
 (3, '2', 'c81e728d9d4c2f636f067f89cc14862c', '1@1', 0, '2023-09-06 08:26:15'),
 (4, '123', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:29:22'),
 (5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 0, '2023-09-06 08:33:55'),
-(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 952000, '2023-09-06 09:43:07');
+(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 2462000, '2023-09-06 09:43:07');
 
 --
 -- Indexes for dumped tables
@@ -176,6 +194,12 @@ ALTER TABLE `clone_category`
 --
 ALTER TABLE `clone_invoices`
   ADD PRIMARY KEY (`invoices_id`);
+
+--
+-- Indexes for table `clone_order`
+--
+ALTER TABLE `clone_order`
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `clone_product`
@@ -209,7 +233,13 @@ ALTER TABLE `clone_category`
 -- AUTO_INCREMENT for table `clone_invoices`
 --
 ALTER TABLE `clone_invoices`
-  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `clone_order`
+--
+ALTER TABLE `clone_order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `clone_product`

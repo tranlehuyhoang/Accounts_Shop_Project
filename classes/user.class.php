@@ -45,7 +45,16 @@ class user
 
     public function show_user()
     {
-        $query = "SELECT * FROM user_user order by userid desc";
+        $query = "SELECT * FROM clone_user order by userid desc";
+        $result = $this->db->select($query);
+
+        return $result;
+    }
+    public function get_asset_user()
+    {
+        $user_id =   $_SESSION['clone_user_id'];
+
+        $query = "SELECT * FROM clone_user where user_id = '$user_id'";
         $result = $this->db->select($query);
 
         return $result;
