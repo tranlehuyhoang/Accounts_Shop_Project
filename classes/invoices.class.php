@@ -71,6 +71,16 @@ class invoices
         return $result;
     }
 
+    public function count_invoices_by_user()
+    {
+        $invoices_user = $_SESSION['clone_user_id'];
+        $query = "SELECT SUM(invoices_price) AS total_amount FROM clone_invoices 
+              WHERE invoices_user = '$invoices_user' AND invoices_status = '1'";
+        $result = $this->db->select($query);
+
+        return $result;
+    }
+
 
     public function update_invoices($content, $user, $price)
     {

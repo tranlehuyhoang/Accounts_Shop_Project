@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 07, 2023 at 12:18 PM
+-- Generation Time: Sep 07, 2023 at 04:09 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -183,7 +183,7 @@ INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_ema
 (3, '2', 'c81e728d9d4c2f636f067f89cc14862c', '1@1', 0, '2023-09-06 08:26:15'),
 (4, '123', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-06 08:29:22'),
 (5, '1@1', 'd86ec7ac67cf45f6205a8ed9080e6fc1', 'f@faew', 34234234, '2023-09-06 08:33:55'),
-(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 89000, '2023-09-06 09:43:07'),
+(6, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@gmail.com', 89000, '2023-09-06 09:43:07'),
 (7, '12', 'c20ad4d76fe97759aa27a0c99bff6710', '1@1', 0, '2023-09-07 04:49:30'),
 (8, '2509roblox23', 'c4ca4238a0b923820dcc509a6f75849b', '1@1', 0, '2023-09-07 04:50:16'),
 (9, '2509robloxx', '9c1042456b2bed589dbc7f6532ec7d58', '2509robloxx@faf', 0, '2023-09-07 10:12:38');

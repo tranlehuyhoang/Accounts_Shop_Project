@@ -62,43 +62,45 @@ class user
 
 
 
-    public function update_user($data, $id)
-    {
-        $userroles = mysqli_real_escape_string($this->db->link, $data['userroles']);
-        $id = mysqli_real_escape_string($this->db->link, $id);
+    // public function update_user($data, $id)
+    // {
+    //     $userroles = mysqli_real_escape_string($this->db->link, $data['userroles']);
+    //     $id = mysqli_real_escape_string($this->db->link, $id);
 
-        if ($userroles == '') {
-            $arlet = "<div class='alert alert-danger' role='alert'>Category name empty</div>";
-            return $arlet;
-        } else {
-            $query = "UPDATE user_user SET userroles = '$userroles'  WHERE userid = '$id'";
-            $result = $this->db->update($query);
-            if ($result) {
-                $arlet = "<div class='alert alert-success' role='alert'>Update Category Successfully</div>";
-                return $arlet;
-            } else {
-                $arlet = "<div class='alert alert-danger' role='alert'>Error</div>";
+    //     if ($userroles == '') {
+    //         $arlet = "<div class='alert alert-danger' role='alert'>Category name empty</div>";
+    //         return $arlet;
+    //     } else {
+    //         $query = "UPDATE user_user SET userroles = '$userroles'  WHERE userid = '$id'";
+    //         $result = $this->db->update($query);
+    //         if ($result) {
+    //             $arlet = "<div class='alert alert-success' role='alert'>Update Category Successfully</div>";
+    //             return $arlet;
+    //         } else {
+    //             $arlet = "<div class='alert alert-danger' role='alert'>Error</div>";
 
-                return $arlet;
-            }
-        }
-    }
-    public function delete_user($id)
-    {
-        $id = mysqli_real_escape_string($this->db->link, $id);
-        $query = "DELETE FROM user_user WHERE userid = '$id'";
-        $result = $this->db->delete($query);
+    //             return $arlet;
+    //         }
+    //     }
+    // }
 
 
-        if ($result) {
-            $arlet = "<div class='alert alert-success' role='alert'>Delete Code Successfully</div>";
-            return $arlet;
-        } else {
-            $arlet = "<div class='alert alert-danger' role='alert'>Delete Code Successfully</div>";
+    // public function delete_user($id)
+    // {
+    //     $id = mysqli_real_escape_string($this->db->link, $id);
+    //     $query = "DELETE FROM user_user WHERE userid = '$id'";
+    //     $result = $this->db->delete($query);
 
-            return $arlet;
-        }
-    }
+
+    //     if ($result) {
+    //         $arlet = "<div class='alert alert-success' role='alert'>Delete Code Successfully</div>";
+    //         return $arlet;
+    //     } else {
+    //         $arlet = "<div class='alert alert-danger' role='alert'>Delete Code Successfully</div>";
+
+    //         return $arlet;
+    //     }
+    // }
     public function getuserbyid($id)
     {
 

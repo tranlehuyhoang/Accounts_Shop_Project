@@ -97,6 +97,16 @@ class order
             return $arlet;
         }
     }
+    public function show_order_by_user()
+    {
+        $order_user = $_SESSION['clone_user_id'];
+        $query = "SELECT SUM(order_amout * order_price) AS total_amount FROM clone_order 
+              WHERE order_user = '$order_user'";
+        $result = $this->db->select($query);
+        if ($result) {
+            return $result;
+        }
+    }
 
     public function show_product_by_order_code($order_code)
     {
