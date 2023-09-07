@@ -31,13 +31,13 @@ $show_brand = $brand->show_brand();
 $get_asset_user = $user->get_asset_user();
 
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!isset($_SESSION['clone_user_id'])) {
         echo "<script>location.href = '../client/login.php';</script>";
     } else {
         // echo $_POST['modal-id'] . '<br/>';
-
         // echo $_POST['price'] . '<br/>';
         // echo $_POST['amount'] . '<br/>';
 
@@ -87,7 +87,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     confirmButtonText: 'OK'
                                                 });
                                             </script>
+                                            <?php
+                                        } else {
+                                            // đặt hàng thành công
+                                            $insert_order = $order->insert_order($_POST['price'], $_POST['modal-id'], $_POST['amount']);
+                                            if (isset($insert_order)) {
+                                                if ($insert_order == '200') {
+                                            ?>
+                                                    <script type="text/javascript">
+                                                        Swal.fire({
+                                                            title: 'Thành công',
+                                                            text: 'Mua thành công!',
+                                                            icon: 'success',
+                                                            confirmButtonText: 'OK'
+                                                        });
+                                                    </script>
 <?php
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -560,7 +577,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="modal fade" id="modalBuy" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered mw-650px">
-                        <div class="modal-content" style="background-image:url('../resources/images/bg-buy.png');">
+                        <div class="modal-content" style="background-image: url('../resources/images/bg-buy.png');">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Thanh toán đơn hàng</h5>
                                 <button type="button" class="close" style="color: red;" data-dismiss="modal" aria-label="Close">

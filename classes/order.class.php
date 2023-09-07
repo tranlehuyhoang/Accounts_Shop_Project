@@ -18,11 +18,13 @@ class order
         $order_price = mysqli_real_escape_string($this->db->link, $order_price);
         $order_brand = mysqli_real_escape_string($this->db->link, $order_brand);
         $order_amout = mysqli_real_escape_string($this->db->link, $order_amout);
+        // $order_code = $this->random_order_content();
+        $order_code = $this->random_order_content();
 
         $order_user = $_SESSION['clone_user_id'];
 
 
-        $query = "INSERT INTO clone_order(order_price,order_brand,order_amout,order_user) VALUES ('$order_price','$order_brand','$order_amout','$order_user')";
+        $query = "INSERT INTO clone_order(order_price,order_brand,order_amout,order_user,order_code) VALUES ('$order_price','$order_brand','$order_amout','$order_user','$order_code')";
         $result = $this->db->insert($query);
         if ($result) {
             $arlet = '200';
@@ -35,16 +37,20 @@ class order
 
     public function random_order_content()
     {
-        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $numbers = '0123456789';
         $randomString = '';
 
-
-        $randomString = '';
-        for ($i = 0; $i < 6; $i++) {
+        // Tạo 4 kí tự chữ cái đầu tiên
+        for ($i = 0; $i < 4; $i++) {
             $randomString .= $characters[rand(0, strlen($characters) - 1)];
         }
 
-        $query = "SELECT * FROM clone_order WHERE invoices_content = '$randomString' ";
+        // Tạo 10 kí tự số tiếp theo
+        for ($i = 0; $i < 10; $i++) {
+            $randomString .= $numbers[rand(0, strlen($numbers) - 1)];
+        }
+        $query = "SELECT * FROM clone_order WHERE order_code = '$randomString' ";
         $result = $this->db->select($query);
         if ($result) {
             $this->random_order_content();

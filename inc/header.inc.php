@@ -5,11 +5,13 @@ include_once __DIR__ .  '/../classes/category.class.php';
 include_once __DIR__ .  '/../classes/brand.class.php';
 include_once __DIR__ .  '/../classes/product.class.php';
 include_once __DIR__ .  '/../classes/invoices.class.php';
+include_once __DIR__ .  '/../classes/order.class.php';
 $user = new user();
 $category = new category();
 $brand = new brand();
 $product = new product();
 $invoices = new invoices();
+$order = new order();
 
 if (isset($_SESSION['clone_user_id'])) {
     $getuserbyid = $user->getuserbyid($_SESSION['clone_user_id']);
