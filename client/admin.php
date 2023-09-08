@@ -12,11 +12,11 @@ while (true) {
 </script> -->
 <?php
 session_start();
-include_once __DIR__ .  '/../classes/user.class.php';
-include_once __DIR__ .  '/../classes/category.class.php';
-include_once __DIR__ .  '/../classes/brand.class.php';
-include_once __DIR__ .  '/../classes/product.class.php';
-include_once __DIR__ .  '/../classes/invoices.class.php';
+include  '../classes/user.class.php';
+include  '../classes/category.class.php';
+include  '../classes/brand.class.php';
+include  '../classes/product.class.php';
+include  '../classes/invoices.class.php';
 $user = new user();
 $category = new category();
 $brand = new brand();

@@ -1,2 +1,2 @@
 <?php
-include './clinet/home.php';
+header('Location: ./client/home.php');
