@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: Sep 08, 2023 at 06:38 AM
+-- Generation Time: Sep 08, 2023 at 07:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -82,6 +82,13 @@ CREATE TABLE `clone_invoices` (
   `invoices_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `clone_invoices`
+--
+
+INSERT INTO `clone_invoices` (`invoices_id`, `invoices_price`, `invoices_content`, `invoices_status`, `invoices_user`, `invoices_date`) VALUES
+(21, 10000, 'C6RJYP', 1, 10, '2023-09-08 05:08:40');
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +105,13 @@ CREATE TABLE `clone_order` (
   `order_code` varchar(225) NOT NULL,
   `order_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `clone_order`
+--
+
+INSERT INTO `clone_order` (`order_id`, `order_user`, `order_data`, `order_price`, `order_brand`, `order_amout`, `order_code`, `order_date`) VALUES
+(30, 10, '', 5000, 2, 1, 'NTUM4387132554', '2023-09-08 05:12:11');
 
 -- --------------------------------------------------------
 
@@ -119,7 +133,7 @@ CREATE TABLE `clone_product` (
 --
 
 INSERT INTO `clone_product` (`product_id`, `product_data`, `product_selled`, `product_brand`, `product_order`, `product_date`) VALUES
-(1, 'hitmaldalyq@hotmail.com|qKcIOa43', 0, 0, 'JULD4726635482', '2023-09-06 13:15:24');
+(1, 'hitmaldalyq@hotmail.com|qKcIOa43', 1, 2, 'NTUM4387132554', '2023-09-06 13:15:24');
 
 -- --------------------------------------------------------
 
@@ -135,6 +149,13 @@ CREATE TABLE `clone_user` (
   `user_asset` int(225) NOT NULL,
   `user_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `clone_user`
+--
+
+INSERT INTO `clone_user` (`user_id`, `user_username`, `user_password`, `user_email`, `user_asset`, `user_date`) VALUES
+(10, '2509roblox', '85a2526017b9660a780ca5aab9bca9fb', '2509roblox@2509roblox', 5000, '2023-09-08 04:51:35');
 
 --
 -- Indexes for dumped tables
@@ -196,13 +217,13 @@ ALTER TABLE `clone_category`
 -- AUTO_INCREMENT for table `clone_invoices`
 --
 ALTER TABLE `clone_invoices`
-  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `invoices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `clone_order`
 --
 ALTER TABLE `clone_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `clone_product`
@@ -214,7 +235,7 @@ ALTER TABLE `clone_product`
 -- AUTO_INCREMENT for table `clone_user`
 --
 ALTER TABLE `clone_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

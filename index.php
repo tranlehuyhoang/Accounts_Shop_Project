@@ -1,3 +1,2 @@
-<script type="text/javascript">
-    location.href = './client/home.php';
-</script>
+<?php
+include './clinet/home.php';

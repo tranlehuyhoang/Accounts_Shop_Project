@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ .  '/../inc/inc.class.php';
+session_start();
 ?>
 <!doctype html>
 <html>
@@ -7,7 +7,7 @@ include_once __DIR__ .  '/../inc/inc.class.php';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Đăng Ký | CLONESNEW.RF.GD</title>
+    <title>Đăng Nhập | CLONESNEW.SITE</title>
     <link rel="canonical" href="https://clonesnew.com/client/home" />
     <meta name="description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng " />
     <meta name="keywords" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
@@ -181,9 +181,9 @@ include_once __DIR__ .  '/../inc/inc.class.php';
                                 <script src="../public/datum/assets/js/app.js"></script>
 
                                 <?php
+                                include_once __DIR__ .  '/../classes/user.class.php';
 
-
-
+                                $user = new user();
                                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 

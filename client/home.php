@@ -1,5 +1,18 @@
 <?php
-include_once __DIR__ .  '/../inc/header.inc.php';
+include_once '../inc/header.inc.php';
+include_once __DIR__ .  '/../classes/user.class.php';
+include_once __DIR__ .  '/../classes/category.class.php';
+include_once __DIR__ .  '/../classes/brand.class.php';
+include_once __DIR__ .  '/../classes/product.class.php';
+include_once __DIR__ .  '/../classes/invoices.class.php';
+include_once __DIR__ .  '/../classes/order.class.php';
+$user1 = new user();
+$category1 = new category();
+$brand1 = new brand();
+$product1 = new product();
+$invoices1 = new invoices();
+$order1 = new order();
+
 ?>
 <script src="../public/datum/assets/js/backend-bundle.min.js"></script>
 <!-- Chart Custom JavaScript -->
@@ -25,10 +38,10 @@ include_once __DIR__ .  '/../inc/header.inc.php';
 <!-- app JavaScript -->
 <script src="../public/datum/assets/js/app.js"></script>
 <?php
-$showcategory = $category->show_category();
-$showcategory1 = $category->show_category();
-$show_brand = $brand->show_brand();
-$get_asset_user = $user->get_asset_user();
+$showcategory = $category1->show_category();
+$showcategory1 = $category1->show_category();
+$show_brand = $brand1->show_brand();
+$get_asset_user = $user1->get_asset_user();
 
 
 
@@ -41,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // echo $_POST['price'] . '<br/>';
         // echo $_POST['amount'] . '<br/>';
 
-        $countProducts = $product->countProduct($_POST['modal-id']);
+        $countProducts = $product1->countProduct($_POST['modal-id']);
         if (isset($countProducts)) {
             if ($countProducts && $countProducts->num_rows > 0) {
                 $i = 0;

@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ .  '/../inc/header.inc.php';
+include_once '../inc/header.inc.php';
 
 if (!isset($_SESSION['clone_user_id'])) {
     echo "<script>location.href = '../client/login.php';</script>";
@@ -56,42 +56,61 @@ if (!isset($_SESSION['clone_user_id'])) {
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $show_order = $order->show_order();
-                                        if (isset($show_order) && $show_order->num_rows > 0) {
-                                            while ($results = $show_order->fetch_assoc()) {
+                                        $show_order1 = $order->show_order();
+                                        if (isset($show_order1)) {
+                                            if ($show_order1 && $show_order1->num_rows > 0) {
+                                                $i = 0;
+                                                while ($results = $show_order1->fetch_assoc()) {
+                                                    // echo print_r($results)
                                         ?>
-                                                <tr class="even">
-                                                    <td><?php echo $results['order_id']; ?></td>
-                                                    <td><?php echo $results['order_code']; ?></td>
-                                                    <td><b><?php echo $results['brand_name']; ?></b></td>
-                                                    <td><b style="color:blue;"><?php echo $results['order_amout']; ?></b></td>
-                                                    <td><b style="color:red;"><?php echo number_format($results['order_amout'] * $results['order_price']); ?>đ</b>
-                                                    </td>
-                                                    <td><i><?php echo $results['order_date']; ?></i></td>
-                                                    <td>
-                                                        <a type="button" href="../client/orders_detail.php?bill=<?php echo $results['order_code']; ?>" class="btn btn-primary btn-sm">Xem Thêm</a>
-                                                        <button type="button" onclick="downloadFile('<?php echo $results['order_code']; ?>',`<?php
-                                                                                                                                                $show_product_by_order_code1 = $order->show_product_by_order_code($results['order_code']);
-                                                                                                                                                if (isset($show_product_by_order_code1) && $show_product_by_order_code1->num_rows > 0) {
-                                                                                                                                                    while ($resultss = $show_product_by_order_code1->fetch_assoc()) {
-                                                                                                                                                        echo $resultss['product_data'];
-                                                                                                                                                    }
-                                                                                                                                                }
-                                                                                                                                                ?>`)" class="btn btn-danger btn-sm">Tải Về</button>
-                                                        <button type="button" class="btn btn-warning btn-sm">Xoá</button>
-                                                    </td>
-                                                </tr>
+                                                    <tr class="even">
+                                                        <td><?php echo $results['order_id'] ?></td>
+                                                        <td><?php echo $results['order_code'] ?></td>
+                                                        <td><b><?php echo $results['brand_name'] ?></b></td>
+                                                        <td><b style="color:blue;"><?php echo $results['order_amout'] ?></b></td>
+                                                        <td><b style="color:red;"><?php echo number_format($results['order_amout'] * $results['order_price']) ?>đ</b>
+                                                        </td>
+                                                        <td><i><?php echo $results['order_date'] ?></i></td>
+                                                        <td><a type="button" href="../client/orders_detail.php?bill=<?php echo $results['order_code'] ?>" class="btn btn-primary btn-sm">Xem Thêm</a>
+                                                            <button type="button" onclick="downloadFile('<?php echo $results['order_code']; ?>',`
+<?php
+                                                    $show_product_by_order_code1 = $order->show_product_by_order_code($results['order_code']);
+                                                    if (isset($show_product_by_order_code1)) {
+                                                        if ($show_product_by_order_code1 && $show_product_by_order_code1->num_rows > 0) {
+                                                            $i = 0;
+                                                            while ($resultss = $show_product_by_order_code1->fetch_assoc()) {
+?>
+'<?php echo $resultss['product_data']; ?>'
+<?php
+                                                                $i++;
+                                                            }
+                                                        } else {
+?>
+
+<?php
+                                                        }
+                                                    } else {
+?>
+
+<?php
+                                                    }
+?>`)" class="btn btn-danger btn-sm">Tải Về</button>
+                                                            <button type="button" onclick="RemoveRow(51630, `0fa5978762a28811e77eb369d275de0b`, `PCLA1693978818`)" class="btn btn-warning btn-sm">Xoá</button>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    $i++;
+                                                }
+                                            } else {
+                                                ?>
                                             <?php
                                             }
                                         } else {
                                             ?>
-                                            <!-- Display a message or placeholder if no orders are available -->
-                                            <tr>
-                                                <td colspan="7">No orders found.</td>
-                                            </tr>
                                         <?php
                                         }
                                         ?>
+
                                     </tbody>
                                 </table>
                             </div>
