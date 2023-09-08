@@ -21,7 +21,7 @@ class invoices
         $invoices_user = $_SESSION['clone_user_id'];
 
 
-        $query = "INSERT INTO clone_invoices(invoices_price,invoices_content,invoices_status,invoices_user) VALUES ('$invoices_price','$invoices_content','$invoices_status','$invoices_user')";
+        $query = "INSERT INTO clone_invoices(invoices_price,invoices_content,invoices_status,invoices_user,invoices_status) VALUES ('$invoices_price','$invoices_content','$invoices_status','$invoices_user','0')";
         $result = $this->db->insert($query);
         if ($result) {
             $arlet = $invoices_content;

@@ -24,7 +24,7 @@ class order
         $order_user = $_SESSION['clone_user_id'];
 
 
-        $query = "INSERT INTO clone_order(order_price,order_brand,order_amout,order_user,order_code) VALUES ('$order_price','$order_brand','$order_amout','$order_user','$order_code')";
+        $query = "INSERT INTO clone_order(order_price,order_brand,order_amout,order_user,order_code,order_data) VALUES ('$order_price','$order_brand','$order_amout','$order_user','$order_code','0')";
         $result = $this->db->insert($query);
         if ($result) {
             $this->update_user($order_user, $order_price * $order_amout);

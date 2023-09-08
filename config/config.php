@@ -14,3 +14,11 @@ define("DB_NAME", "if0_34985443_clonesnew");
 define("DB_POST", "3306");
 
 ?>
+<?php
+// define("DB_HOST", "localhost");
+// define("DB_USER", "id20061802_users");
+// define("DB_PASS", "123_aaaaaaA");
+// define("DB_NAME", "id20061802_crudd");
+// define("DB_POST", "3306");
+
+?>
