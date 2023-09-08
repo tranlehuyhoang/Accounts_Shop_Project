@@ -12,5 +12,5 @@ define("DB_USER", "if0_34985443");
 define("DB_PASS", "tEXqhGQTILN0at");
 define("DB_NAME", "if0_34985443_clonesnew");
 define("DB_POST", "3306");
-define("HOST", "https://clonesnew.rf.gd");
+
 ?>

@@ -1,5 +1,5 @@
 <?php
-include_once '../inc/header.inc.php';
+include_once __DIR__ .  '/../inc/header.inc.php';
 
 
 ?>

@@ -11,17 +11,7 @@ while (true) {
 }
 </script> -->
 <?php
-session_start();
-include_once __DIR__ .  '/../classes/user.class.php';
-include_once __DIR__ .  '/../classes/category.class.php';
-include_once __DIR__ .  '/../classes/brand.class.php';
-include_once __DIR__ .  '/../classes/product.class.php';
-include_once __DIR__ .  '/../classes/invoices.class.php';
-$user = new user();
-$category = new category();
-$brand = new brand();
-$product = new product();
-$invoices = new invoices();
+include_once __DIR__ .  '/../inc/inc.class.php';
 
 // if (isset($_SESSION['clone_user_id'])) {
 //     $getuserbyid = $user->getuserbyid($_SESSION['clone_user_id']);
@@ -43,7 +33,7 @@ if (isset($_SESSION['clone_user_id']) && $_SESSION['clone_user_id'] == '6') {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CLONESNEW.SITE</title>
+    <title>ADMIN | CLONESNEW.RF.GD</title>
     <link rel="canonical" href="../client/home" />
     <meta name="description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng " />
     <meta name="keywords" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">

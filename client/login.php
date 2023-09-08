@@ -25,10 +25,9 @@
 
 
 <?php
-session_start();
-include_once __DIR__ .  '/../classes/user.class.php';
+include_once __DIR__ .  '/../inc/inc.class.php';
 
-$user = new user();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
@@ -36,31 +35,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($login)) {
         if ($login == '200') {
 ?>
-            <script type="text/javascript">
-                Swal.fire({
-                    title: 'Thành công!',
-                    text: 'Đăng nhập thành công',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                });
-                setTimeout(function() {
-                    location.href = '../client/home.php';
-                }, 2000);
-            </script>
-            <?php
+<script type="text/javascript">
+Swal.fire({
+    title: 'Thành công!',
+    text: 'Đăng nhập thành công',
+    icon: 'success',
+    confirmButtonText: 'OK'
+});
+setTimeout(function() {
+    location.href = '../client/home.php';
+}, 2000);
+</script>
+<?php
         } else {
 
             if ($login == '400') {
 
             ?>
-                <script type="text/javascript">
-                    Swal.fire({
-                        title: 'Thất bại!',
-                        text: 'Sai tài khoản hoặc mật khẩu',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                </script>
+<script type="text/javascript">
+Swal.fire({
+    title: 'Thất bại!',
+    text: 'Sai tài khoản hoặc mật khẩu',
+    icon: 'error',
+    confirmButtonText: 'OK'
+});
+</script>
 <?php
 
             }
@@ -80,7 +79,8 @@ if (isset($_SESSION['clone_user_id'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Đăng Nhập | CLONESNEW.SITE</title>
+    <title>Đăng Nhập | CLONESNEW.RF.GD</title>
+
     <link rel="canonical" href="https://clonesnew.com/client/home" />
     <meta name="description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng " />
     <meta name="keywords" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
@@ -107,7 +107,9 @@ if (isset($_SESSION['clone_user_id'])) {
     <link rel="stylesheet" href="../resources/css/customize.css">
     <script src="../resources/js/jquery.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- sweetalert2-->
     <link class="main-stylesheet" href="../public/sweetalert2/default.css" rel="stylesheet" type="text/css">
     <script src="../public/sweetalert2/sweetalert2.js"></script>
@@ -119,51 +121,51 @@ if (isset($_SESSION['clone_user_id'])) {
     <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
 
-        .card-product {
-            color: white;
-            background-image: linear-gradient(to right, #060606, #060606, #060606);
-        }
+    .card-product {
+        color: white;
+        background-image: linear-gradient(to right, #060606, #060606, #060606);
+    }
 
-        #loading-center {
-            background: url(../assets/storage/images/gif_loaderPZV.png) no-repeat scroll 50%;
-            background-size: 20%;
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
+    #loading-center {
+        background: url(../assets/storage/images/gif_loaderPZV.png) no-repeat scroll 50%;
+        background-size: 20%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
 
-        .change-mode .custom-switch.custom-switch-icon label.custom-control-label:after {
-            top: 0;
-            left: 0;
-            width: 35px;
-            height: 30px;
-            border-radius: 5px 0 0 5px;
-            background-color: #060606;
-            border-color: #060606;
-            z-index: 0;
-        }
+    .change-mode .custom-switch.custom-switch-icon label.custom-control-label:after {
+        top: 0;
+        left: 0;
+        width: 35px;
+        height: 30px;
+        border-radius: 5px 0 0 5px;
+        background-color: #060606;
+        border-color: #060606;
+        z-index: 0;
+    }
     </style>
     <!-- Script Header -->
     <style>
-        .iq-sidebar-menu .side-menu li a {
-            color: #f1f1f1;
-        }
+    .iq-sidebar-menu .side-menu li a {
+        color: #f1f1f1;
+    }
 
-        .text-uppercase {
-            color: #f1f1f1;
-        }
+    .text-uppercase {
+        color: #f1f1f1;
+    }
     </style>
 </head>
 <!-- Dev By PS26819 | FB.COM/PS26819 | ZALO.ME/0947838128 | MMO Solution -->
 <style>
-    .bg-image {
-        background-position: 0 50%;
-        background-size: cover;
-    }
+.bg-image {
+    background-position: 0 50%;
+    background-size: cover;
+}
 </style>
 
 <body class="bg-image" style="background-image: url(https://clonesnew.com/assets/storage/images/bg_loginQIG.png);">
@@ -181,8 +183,10 @@ if (isset($_SESSION['clone_user_id'])) {
                         <div class="card p-3">
                             <div class="card-body">
                                 <div class="auth-logo">
-                                    <img src="https://clonesnew.com/assets/storage/images/logo_dark_H7W.png" class="img-fluid  rounded-normal  darkmode-logo" alt="logo">
-                                    <img src="https://clonesnew.com/assets/storage/images/logo_light_QPB.png" class="img-fluid rounded-normal light-logo" alt="logo">
+                                    <img src="https://clonesnew.com/assets/storage/images/logo_dark_H7W.png"
+                                        class="img-fluid  rounded-normal  darkmode-logo" alt="logo">
+                                    <img src="https://clonesnew.com/assets/storage/images/logo_light_QPB.png"
+                                        class="img-fluid rounded-normal light-logo" alt="logo">
                                 </div>
                                 <h3 class="mb-3 font-weight-bold text-center">Đăng Nhập</h3>
                                 <!-- <p class="text-center text-secondary mb-4">
@@ -234,7 +238,8 @@ if (isset($_SESSION['clone_user_id'])) {
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="text-secondary">Tên đăng nhập</label>
-                                                <input class="form-control" type="text" name="user_username" required id="username" value="" placeholder="Enter Username">
+                                                <input class="form-control" type="text" name="user_username" required
+                                                    id="username" value="" placeholder="Enter Username">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -244,7 +249,9 @@ if (isset($_SESSION['clone_user_id'])) {
                                                     <label><a href="https://clonesnew.com/client/forgot-password">Quên
                                                             mật khẩu</a></label>
                                                 </div>
-                                                <input class="form-control" name="user_password" required type="password" id="password" value="" placeholder="Vui lòng nhập mật khẩu">
+                                                <input class="form-control" name="user_password" required
+                                                    type="password" id="password" value=""
+                                                    placeholder="Vui lòng nhập mật khẩu">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -259,7 +266,8 @@ if (isset($_SESSION['clone_user_id'])) {
                                     <button type="submit" id="btnLogin" class="btn btn-primary btn-block mt-2">Đăng
                                         Nhập</button>
                                     <div class="col-lg-12 mt-3">
-                                        <p class="mb-0 text-center">Bạn không có tài khoản? <a href="../client/register.php">Đăng Ký</a></p>
+                                        <p class="mb-0 text-center">Bạn không có tài khoản? <a
+                                                href="../client/register.php">Đăng Ký</a></p>
                                     </div>
                                 </form>
                             </div>
@@ -277,62 +285,62 @@ if (isset($_SESSION['clone_user_id'])) {
 
 
 <script type="text/javascript">
-    // Swal.fire({
-    //     title: 'Hello!',
-    //     text: 'This is a basic alert',
-    //     icon: 'warning',
-    //     confirmButtonText: 'OK'
-    // });
-    // cuteToast({
-    //     type: "success",
-    //     message: 'thành công',
-    //     timer: 5000
-    // });
-    // $("#btnLogin").on("click", function() {
-    //     $('#btnLogin').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...').prop('disabled',
-    //         true);
-    //     $.ajax({
-    //         url: "https://clonesnew.com/ajaxs/client/login.php",
-    //         method: "POST",
-    //         dataType: "JSON",
-    //         data: {
-    //             username: $("#username").val(),
-    //             password: $("#password").val(),
-    //             recaptcha: $("#g-recaptcha-response").val()
-    //         },
-    //         success: function(respone) {
-    //             if (respone.status == 'success') {
-    //                 cuteToast({
-    //                     type: "success",
-    //                     message: respone.msg,
-    //                     timer: 5000
-    //                 });
-    //                 setTimeout("location.href = 'https://clonesnew.com/client/home';", 100);
-    //             } else if (respone.status == 'verify') {
-    //                 cuteToast({
-    //                     type: "warning",
-    //                     message: respone.msg,
-    //                     timer: 5000
-    //                 });
-    //                 setTimeout("location.href = '" + respone.url + "';", 1000);
-    //             } else {
-    //                 Swal.fire(
-    //                     'Thất bại',
-    //                     respone.msg,
-    //                     'error'
-    //                 );
-    //             }
-    //             $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
-    //         },
-    //         error: function() {
-    //             cuteToast({
-    //                 type: "error",
-    //                 message: 'Không thể xử lý',
-    //                 timer: 5000
-    //             });
-    //             $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
-    //         }
+// Swal.fire({
+//     title: 'Hello!',
+//     text: 'This is a basic alert',
+//     icon: 'warning',
+//     confirmButtonText: 'OK'
+// });
+// cuteToast({
+//     type: "success",
+//     message: 'thành công',
+//     timer: 5000
+// });
+// $("#btnLogin").on("click", function() {
+//     $('#btnLogin').html('<i class="fa fa-spinner fa-spin"></i> Đang xử lý...').prop('disabled',
+//         true);
+//     $.ajax({
+//         url: "https://clonesnew.com/ajaxs/client/login.php",
+//         method: "POST",
+//         dataType: "JSON",
+//         data: {
+//             username: $("#username").val(),
+//             password: $("#password").val(),
+//             recaptcha: $("#g-recaptcha-response").val()
+//         },
+//         success: function(respone) {
+//             if (respone.status == 'success') {
+//                 cuteToast({
+//                     type: "success",
+//                     message: respone.msg,
+//                     timer: 5000
+//                 });
+//                 setTimeout("location.href = 'https://clonesnew.com/client/home';", 100);
+//             } else if (respone.status == 'verify') {
+//                 cuteToast({
+//                     type: "warning",
+//                     message: respone.msg,
+//                     timer: 5000
+//                 });
+//                 setTimeout("location.href = '" + respone.url + "';", 1000);
+//             } else {
+//                 Swal.fire(
+//                     'Thất bại',
+//                     respone.msg,
+//                     'error'
+//                 );
+//             }
+//             $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
+//         },
+//         error: function() {
+//             cuteToast({
+//                 type: "error",
+//                 message: 'Không thể xử lý',
+//                 timer: 5000
+//             });
+//             $('#btnLogin').html('Đăng Nhập').prop('disabled', false);
+//         }
 
-    //     });
-    // });
+//     });
+// });
 </script>
