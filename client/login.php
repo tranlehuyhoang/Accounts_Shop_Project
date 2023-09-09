@@ -1,29 +1,3 @@
-<script src="../public/datum/assets/js/backend-bundle.min.js"></script>
-<!-- Chart Custom JavaScript -->
-<script src="../public/datum/assets/js/customizer.js"></script>
-<script src="../public/datum/assets/js/sidebar.js"></script>
-<!-- Flextree Javascript-->
-<script src="../public/datum/assets/js/flex-tree.min.js"></script>
-<script src="../public/datum/assets/js/tree.js"></script>
-<!-- Table Treeview JavaScript -->
-<script src="../public/datum/assets/js/table-treeview.js"></script>
-<!-- SweetAlert JavaScript -->
-<script src="../public/datum/assets/js/sweetalert.js"></script>
-<!-- Vectoe Map JavaScript -->
-<script src="../public/datum/assets/js/vector-map-custom.js"></script>
-<!-- Chart Custom JavaScript -->
-<script src="../public/datum/assets/js/chart-custom.js"></script>
-<script src="../public/datum/assets/js/charts/01.js"></script>
-<script src="../public/datum/assets/js/charts/02.js"></script>
-<!-- slider JavaScript -->
-<script src="../public/datum/assets/js/slider.js"></script>
-<!-- Emoji picker -->
-<script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module">
-</script>
-<!-- app JavaScript -->
-<script src="../public/datum/assets/js/app.js"></script>
-
-
 <?php
 session_start();
 include_once __DIR__ .  '/../classes/user.class.php';
@@ -33,43 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $login = $user->login($_POST);
-    if (isset($login)) {
-        if ($login == '200') {
-?>
-            <script type="text/javascript">
-                Swal.fire({
-                    title: 'Thành công!',
-                    text: 'Đăng nhập thành công',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                });
-                setTimeout(function() {
-                    location.href = '../client/home.php';
-                }, 2000);
-            </script>
-            <?php
-        } else {
-
-            if ($login == '400') {
-
-            ?>
-                <script type="text/javascript">
-                    Swal.fire({
-                        title: 'Thất bại!',
-                        text: 'Sai tài khoản hoặc mật khẩu',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                </script>
-<?php
-
-            }
-        }
-    }
 }
 if (isset($_SESSION['clone_user_id'])) {
     header('Location: ../client/home.php');
-    // echo $_SESSION['clone_user_id'];
+    echo $_SESSION['clone_user_id'];
     # code...
 }
 
@@ -81,11 +22,11 @@ if (isset($_SESSION['clone_user_id'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Đăng Nhập | CLONESNEW.SITE</title>
-    <link rel="canonical" href="https://clonesnew.com/client/home" />
+    <!-- <link rel="canonical" href="https://clonesnew.com/client/home" /> -->
     <meta name="description" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng " />
     <meta name="keywords" content="Liên Hệ Support : 0337799453 Uy Tín - Chất Lượng ">
     <meta name="copyright" content="PS26819 - THIẾT KẾ WEBSITE MMO" />
-    <meta name="author" content=" Huy Hoàng" />
+    <meta name="author" content=" Hòa Nguyễn" />
     <!-- Open Graph data -->
     <meta property="og:title" content="CLONESNEW.SITE">
     <meta property="og:type" content="Website">
@@ -166,7 +107,7 @@ if (isset($_SESSION['clone_user_id'])) {
     }
 </style>
 
-<body class="bg-image" style="background-image: url(https://clonesnew.com/assets/storage/images/bg_loginQIG.png);">
+<body class="bg-image" style="background-image: url(../assets/storage/images/bg_loginQIG.png);">
     <!-- loader Start -->
     <div id="loading">
         <div id="loading-center">
@@ -181,8 +122,8 @@ if (isset($_SESSION['clone_user_id'])) {
                         <div class="card p-3">
                             <div class="card-body">
                                 <div class="auth-logo">
-                                    <img src="https://clonesnew.com/assets/storage/images/logo_dark_H7W.png" class="img-fluid  rounded-normal  darkmode-logo" alt="logo">
-                                    <img src="https://clonesnew.com/assets/storage/images/logo_light_QPB.png" class="img-fluid rounded-normal light-logo" alt="logo">
+                                    <img src="../assets/storage/images/logo_dark_H7W.png" class="img-fluid  rounded-normal  darkmode-logo" alt="logo">
+                                    <img src="../assets/storage/images/logo_light_QPB.png" class="img-fluid rounded-normal light-logo" alt="logo">
                                 </div>
                                 <h3 class="mb-3 font-weight-bold text-center">Đăng Nhập</h3>
                                 <!-- <p class="text-center text-secondary mb-4">
@@ -226,9 +167,61 @@ if (isset($_SESSION['clone_user_id'])) {
                                     <p class="line-around text-secondary mb-0"><span
                                             class="line-around-1">hoặc</span></p>
                                 </div> -->
-
+                                <script src="../public/datum/assets/js/backend-bundle.min.js"></script>
+                                <!-- Chart Custom JavaScript -->
+                                <script src="../public/datum/assets/js/customizer.js"></script>
+                                <script src="../public/datum/assets/js/sidebar.js"></script>
+                                <!-- Flextree Javascript-->
+                                <script src="../public/datum/assets/js/flex-tree.min.js"></script>
+                                <script src="../public/datum/assets/js/tree.js"></script>
+                                <!-- Table Treeview JavaScript -->
+                                <script src="../public/datum/assets/js/table-treeview.js"></script>
+                                <!-- SweetAlert JavaScript -->
+                                <script src="../public/datum/assets/js/sweetalert.js"></script>
+                                <!-- Vectoe Map JavaScript -->
+                                <script src="../public/datum/assets/js/vector-map-custom.js"></script>
+                                <!-- Chart Custom JavaScript -->
+                                <script src="../public/datum/assets/js/chart-custom.js"></script>
+                                <script src="../public/datum/assets/js/charts/01.js"></script>
+                                <script src="../public/datum/assets/js/charts/02.js"></script>
+                                <!-- slider JavaScript -->
+                                <script src="../public/datum/assets/js/slider.js"></script>
+                                <!-- Emoji picker -->
+                                <script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module">
+                                </script>
+                                <!-- app JavaScript -->
+                                <script src="../public/datum/assets/js/app.js"></script>
                                 <form method="post">
+                                    <?php if (isset($login)) {
+                                        if ($login == '200') {
+                                    ?>
+                                            <script type="text/javascript">
+                                                Swal.fire({
+                                                    title: 'Thành công!',
+                                                    text: 'Đăng nhập thành công',
+                                                    icon: 'success',
+                                                    confirmButtonText: 'OK'
+                                                });
+                                            </script>
+                                            <?php
+                                        } else {
+
+                                            if ($login == '400') {
+
+                                            ?>
+                                                <script type="text/javascript">
+                                                    Swal.fire({
+                                                        title: 'Thất bại!',
+                                                        text: 'Sai tài khoản hoặc mật khẩu',
+                                                        icon: 'error',
+                                                        confirmButtonText: 'OK'
+                                                    });
+                                                </script>
                                     <?php
+
+                                            }
+                                        }
+                                    }
                                     ?>
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -241,7 +234,7 @@ if (isset($_SESSION['clone_user_id'])) {
                                             <div class="form-group">
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <label class="text-secondary">Mật khẩu</label>
-                                                    <label><a href="https://clonesnew.com/client/forgot-password">Quên
+                                                    <label><a href="../client/forgot-password">Quên
                                                             mật khẩu</a></label>
                                                 </div>
                                                 <input class="form-control" name="user_password" required type="password" id="password" value="" placeholder="Vui lòng nhập mật khẩu">
