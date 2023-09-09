@@ -20,7 +20,6 @@ class user
         $user_username = mysqli_real_escape_string($this->db->link, $data['user_username']);
         $user_email = mysqli_real_escape_string($this->db->link, $data['user_email']);
         $user_password = mysqli_real_escape_string($this->db->link, md5($data['user_password']));
-        $user_asset = '0';
 
         // Kiểm tra xem user_username đã tồn tại trong cơ sở dữ liệu chưa
         $check_query = "SELECT * FROM clone_user WHERE user_username = '$user_username'";
@@ -32,7 +31,7 @@ class user
         }
 
         // Tiếp tục thêm mới người dùng
-        $query = "INSERT INTO clone_user(user_username, user_email, user_password,user_asset) VALUES ('$user_username', '$user_email', '$user_password','$user_asset')";
+        $query = "INSERT INTO clone_user(user_username, user_email, user_password) VALUES ('$user_username', '$user_email', '$user_password')";
         $result = $this->db->insert($query);
 
         if ($result) {

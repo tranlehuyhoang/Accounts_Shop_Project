@@ -1,7 +1,6 @@
 <?php
 
 include_once '../inc/header.inc.php';
-$order1 = new order();
 
 if (!isset($_SESSION['clone_user_id'])) {
     echo "<script>location.href = '../client/login.php';</script>";
@@ -58,11 +57,11 @@ if (!isset($_SESSION['clone_user_id'])) {
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $show_order1 = $order1->show_order();
-                                        if (isset($show_order1)) {
-                                            if ($show_order1 && $show_order1->num_rows > 0) {
+                                        $show_order = $order->show_order();
+                                        if (isset($show_order)) {
+                                            if ($show_order && $show_order->num_rows > 0) {
                                                 $i = 0;
-                                                while ($results = $show_order1->fetch_assoc()) {
+                                                while ($results = $show_order->fetch_assoc()) {
                                                     // echo print_r($results)
                                         ?>
                                         <tr class="even">

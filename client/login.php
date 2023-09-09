@@ -1,19 +1,71 @@
+<script src="../public/datum/assets/js/backend-bundle.min.js"></script>
+<!-- Chart Custom JavaScript -->
+<script src="../public/datum/assets/js/customizer.js"></script>
+<script src="../public/datum/assets/js/sidebar.js"></script>
+<!-- Flextree Javascript-->
+<script src="../public/datum/assets/js/flex-tree.min.js"></script>
+<script src="../public/datum/assets/js/tree.js"></script>
+<!-- Table Treeview JavaScript -->
+<script src="../public/datum/assets/js/table-treeview.js"></script>
+<!-- SweetAlert JavaScript -->
+<script src="../public/datum/assets/js/sweetalert.js"></script>
+<!-- Vectoe Map JavaScript -->
+<script src="../public/datum/assets/js/vector-map-custom.js"></script>
+<!-- Chart Custom JavaScript -->
+<script src="../public/datum/assets/js/chart-custom.js"></script>
+<script src="../public/datum/assets/js/charts/01.js"></script>
+<script src="../public/datum/assets/js/charts/02.js"></script>
+<!-- slider JavaScript -->
+<script src="../public/datum/assets/js/slider.js"></script>
+<!-- Emoji picker -->
+<script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module">
+</script>
+<!-- app JavaScript -->
+<script src="../public/datum/assets/js/app.js"></script>
+
+
 <?php
 session_start();
 include_once __DIR__ .  '/../classes/user.class.php';
-include_once __DIR__ .  '/../classes/category.class.php';
-include_once __DIR__ .  '/../classes/brand.class.php';
-include_once __DIR__ .  '/../classes/product.class.php';
-include_once __DIR__ .  '/../classes/invoices.class.php';
-$user1 = new user();
-$category1 = new category();
-$brand1 = new brand();
-$product1 = new product();
-$invoices1 = new invoices();
+
+$user = new user();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
-    $login1 = $user1->login($_POST);
+    $login = $user->login($_POST);
+    if (isset($login)) {
+        if ($login == '200') {
+?>
+            <script type="text/javascript">
+                Swal.fire({
+                    title: 'Thành công!',
+                    text: 'Đăng nhập thành công',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                setTimeout(function() {
+                    location.href = '../client/home.php';
+                }, 2000);
+            </script>
+            <?php
+        } else {
+
+            if ($login == '400') {
+
+            ?>
+                <script type="text/javascript">
+                    Swal.fire({
+                        title: 'Thất bại!',
+                        text: 'Sai tài khoản hoặc mật khẩu',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                </script>
+<?php
+
+            }
+        }
+    }
 }
 if (isset($_SESSION['clone_user_id'])) {
     header('Location: ../client/home.php');
@@ -174,66 +226,9 @@ if (isset($_SESSION['clone_user_id'])) {
                                     <p class="line-around text-secondary mb-0"><span
                                             class="line-around-1">hoặc</span></p>
                                 </div> -->
-                                <script src="../public/datum/assets/js/backend-bundle.min.js"></script>
-                                <!-- Chart Custom JavaScript -->
-                                <script src="../public/datum/assets/js/customizer.js"></script>
-                                <script src="../public/datum/assets/js/sidebar.js"></script>
-                                <!-- Flextree Javascript-->
-                                <script src="../public/datum/assets/js/flex-tree.min.js"></script>
-                                <script src="../public/datum/assets/js/tree.js"></script>
-                                <!-- Table Treeview JavaScript -->
-                                <script src="../public/datum/assets/js/table-treeview.js"></script>
-                                <!-- SweetAlert JavaScript -->
-                                <script src="../public/datum/assets/js/sweetalert.js"></script>
-                                <!-- Vectoe Map JavaScript -->
-                                <script src="../public/datum/assets/js/vector-map-custom.js"></script>
-                                <!-- Chart Custom JavaScript -->
-                                <script src="../public/datum/assets/js/chart-custom.js"></script>
-                                <script src="../public/datum/assets/js/charts/01.js"></script>
-                                <script src="../public/datum/assets/js/charts/02.js"></script>
-                                <!-- slider JavaScript -->
-                                <script src="../public/datum/assets/js/slider.js"></script>
-                                <!-- Emoji picker -->
-                                <script src="../public/datum/assets/vendor/emoji-picker-element/index.js" type="module">
-                                </script>
-                                <!-- app JavaScript -->
-                                <script src="../public/datum/assets/js/app.js"></script>
+
                                 <form method="post">
                                     <?php
-
-                                    if (isset($login1)) {
-                                        if ($login1 == '200') {
-                                    ?>
-                                            <script type="text/javascript">
-                                                Swal.fire({
-                                                    title: 'Thành công!',
-                                                    text: 'Đăng nhập thành công',
-                                                    icon: 'success',
-                                                    confirmButtonText: 'OK'
-                                                });
-                                                setTimeout(function() {
-                                                    location.href = '../client/home.php';
-                                                }, 2000);
-                                            </script>
-                                            <?php
-                                        } else {
-
-                                            if ($login1 == '400') {
-
-                                            ?>
-                                                <script type="text/javascript">
-                                                    Swal.fire({
-                                                        title: 'Thất bại!',
-                                                        text: 'Sai tài khoản hoặc mật khẩu',
-                                                        icon: 'error',
-                                                        confirmButtonText: 'OK'
-                                                    });
-                                                </script>
-                                    <?php
-
-                                            }
-                                        }
-                                    }
                                     ?>
                                     <div class="row">
                                         <div class="col-lg-12">

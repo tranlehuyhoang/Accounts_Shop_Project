@@ -20,12 +20,11 @@ class order
         $order_amout = mysqli_real_escape_string($this->db->link, $order_amout);
         // $order_code = $this->random_order_content();
         $order_code = $this->random_order_content();
-        $order_data = '0';
 
         $order_user = $_SESSION['clone_user_id'];
 
 
-        $query = "INSERT INTO clone_order(order_price,order_brand,order_amout,order_user,order_code,order_data) VALUES ('$order_price','$order_brand','$order_amout','$order_user','$order_code','$order_data')";
+        $query = "INSERT INTO clone_order(order_price,order_brand,order_amout,order_user,order_code) VALUES ('$order_price','$order_brand','$order_amout','$order_user','$order_code')";
         $result = $this->db->insert($query);
         if ($result) {
             $this->update_user($order_user, $order_price * $order_amout);

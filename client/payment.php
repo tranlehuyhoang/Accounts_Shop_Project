@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../classes/invoices.class.php';
+include_once __DIR__ .  '/../classes/invoices.class.php';
 $invoices = new invoices();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
@@ -46,7 +46,6 @@ if (!isset($_SESSION['clone_user_id'])) {
     <meta name="robots" content="all,follow" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
-    <link rel="shortcut icon" href="../assets/storage/images/favicon_V01.ico" type="image/x-icon">
     <meta http-equiv="pragma" content="no-cache" />
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="../public/bootstrap.min.css" />
