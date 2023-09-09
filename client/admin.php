@@ -31,7 +31,7 @@ if (isset($_GET['bill']) && isset($_GET['user'])  && isset($_GET['price'])) {
 }
 $show_invoices = $invoices->show_invoices();
 
-if (isset($_SESSION['clone_user_id']) && $_SESSION['clone_user_id'] == '6') {
+if (isset($_SESSION['clone_user_id']) && $_SESSION['clone_user_id'] == '10') {
 } else {
     header('Location: ../client/home.php');
 }
