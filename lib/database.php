@@ -29,10 +29,12 @@ class Database
             $this->dbname,
             $this->post
         );
+
         if (!$this->link) {
             $this->error = "Connection fail" . $this->link->connect_error;
             return false;
         }
+        $this->link->set_charset("utf8");
     }
 
     // Select or Read data
