@@ -415,11 +415,61 @@ setTimeout(function() {
                                                                                     </span>
                                                                                     <span
                                                                                         class="btn mb-1 btn-sm btn-outline-info">
-                                                                                        Còn lại: <b>565</b>
+                                                                                        Còn lại: <b>
+                                                                                            <?php
+
+$countProduct1 = $product->countProduct($results['brand_id']);
+
+
+if (isset($countProduct1)) {
+    if ($countProduct1 && $countProduct1->num_rows > 0) {
+        $i = 0;
+        while ($resultsss = $countProduct1->fetch_assoc()) {
+            echo $resultsss['total'];
+?>
+                                                                                            <?php
+            $i++;
+        }
+    } else {
+        echo '0';
+?>
+
+                                                                                            <?php
+    }
+} else {
+?>
+                                                                                            <?php
+}
+?>
+                                                                                        </b>
                                                                                     </span>
                                                                                     <span
                                                                                         class="btn mb-1 btn-sm btn-outline-info">
-                                                                                        Đã bán: <b>2.174.100</b>
+                                                                                        Đã bán: <b><?php
+
+$countProductselled1 = $product->countProductselled($results['brand_id']);
+
+
+if (isset($countProductselled1)) {
+    if ($countProductselled1 && $countProductselled1->num_rows > 0) {
+        $i = 0;
+        while ($resultsss = $countProductselled1->fetch_assoc()) {
+            echo $resultsss['total'];
+?>
+                                                                                            <?php
+            $i++;
+        }
+    } else {
+        echo '0';
+        ?>
+
+                                                                                            <?php
+    }
+} else {
+    ?>
+                                                                                            <?php
+}
+?></b>
                                                                                     </span>
                                                                                     <span
                                                                                         class="btn mb-1 btn-sm btn-outline-warning p-0">

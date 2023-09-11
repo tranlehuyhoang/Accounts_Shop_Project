@@ -11,6 +11,7 @@ class Database
     public $dbname = DB_NAME;
     public $post = DB_POST;
 
+
     public $link;
     public $error;
 
@@ -82,9 +83,5 @@ class Database
         } else {
             return false;
         }
-    }
-    public function close()
-    {
-        $this->link->close();
     }
 }

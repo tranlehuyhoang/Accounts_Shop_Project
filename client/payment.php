@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once __DIR__ .  '/../classes/brand.class.php';
+include_once __DIR__ .  '/../classes/invoices.class.php';
 $invoices = new invoices();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {

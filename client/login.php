@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once __DIR__ .  '/../classes/brand.class.php';
+include_once __DIR__ .  '/../classes/user.class.php';
 
 $user = new user();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
